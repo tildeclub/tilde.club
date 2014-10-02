@@ -1,0 +1,6 @@
+* TODO [#A] Get help
+* TODO [#B] Set up quotas
+* TODO [#B] Figure out chat so that people can chat with a mission, maybe a local tiny irc?
+* TODO [#B] Set up mailing list manager
+* TODO [#A] FUN FOR ME: Set up Usenet News Server
+* TODO [#A] 
