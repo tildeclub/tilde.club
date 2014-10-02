@@ -1,0 +1,20 @@
+#+TITLE: Server Configuration
+
+* Base machine
+- A standard unix server
+- Webmin (people complain but webmin is great)
+
+* Add these repos
+- sudo yum update
+- sudo yum install httpd
+- sudo yum install emacs
+- sudo yum install tmux
+- sudo yum install talk-server
+- sudo yum install htop
+- sudo yum install elinks lynx
+- sudo yum install figlet
+- sudo yum install ImageMagick
+- sudo yum --enablerepo=epel install -y mosh
+- sudo yum install mailman
+
+

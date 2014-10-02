@@ -1,4 +1,5 @@
 tilde.club
 ==========
 
-Code and utilities for running and managing the tilde.club server
+This is the set of code and utilities for running and managing the
+tilde.club server.
