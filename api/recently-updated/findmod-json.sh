@@ -1,0 +1,2 @@
+#!/bin/bash
+find /home/*/public_html -regex "/home/\_?[0-9a-zA-Z]*/public_html/index.html" -type f -name "index.html" -mtime 0 -printf '%T@ %p %TD %Tr %TY-%Tm-%TdT%TTZ\n' 2> /dev/null | sort -r | perl -CSD -pe 'BEGIN { print "{ \"pagelist\": [ \n"; }; END { print "] }\n"; }; if ($i > 0) { print ", "; }; s|([0-9\.]+) /home/([\p{L}\p{N}_]*?)/public_html/index.html (.*) (.*)|{ "username": "$2", "homepage": "http://tilde.club/~$2/", "modtime": "$4" }|; $i++'
