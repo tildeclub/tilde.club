@@ -16,5 +16,4 @@
 - sudo yum install ImageMagick
 - sudo yum --enablerepo=epel install -y mosh
 - sudo yum install mailman
-
-
+- sudo yum install ScrollZ
