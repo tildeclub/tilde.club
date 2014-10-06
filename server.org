@@ -30,6 +30,7 @@
 - yum install gcc
 - yum install nodejs
 - yum install ScrollZ
+- yum install tig
 
 * Remove some things
 - yum uninstall java
