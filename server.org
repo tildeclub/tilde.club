@@ -2,19 +2,40 @@
 
 * Base machine
 - A standard unix server
+- yum install perl-Net-SSLeay
 - Webmin (people complain but webmin is great)
+- (Need perl-net-SSLeay for webmin)
 
-* Add these repos
-- sudo yum update
-- sudo yum install httpd
-- sudo yum install emacs
-- sudo yum install tmux
-- sudo yum install talk-server
-- sudo yum install htop
-- sudo yum install elinks lynx
-- sudo yum install figlet
-- sudo yum install ImageMagick
-- sudo yum --enablerepo=epel install -y mosh
-- sudo yum install mailman
+* Run yum like so:
+- yum update
+- yum install httpd
+- yum install emacs
+- yum install tmux
+- yum install talk-server
+- yum install htop
+- yum install elinks lynx
+- yum install figlet
+- yum install ImageMagick
+- yum --enablerepo=epel install -y mosh
+- yum install mailman
+- yum install tree
+- yum install nail [?why did I did this]
+- yum install postfix
+- yum install alpine
+- yum install pico
+- yum install readline
+- yum groupinstall "Development Tools"
+- yum install gcc
+- [chmod the gcc cc in /usr/bin to 700 root]
+- yum install gcc
+- yum install nodejs
+- yum install ScrollZ
+
+* Remove some things
+- yum uninstall java
+
+* Add these servers
+- IRC: https://github.com/alexyoung/ircd.js
+- USENET: [???]
 
 
