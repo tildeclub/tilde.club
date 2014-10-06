@@ -31,6 +31,11 @@
 - yum install nodejs
 - yum install ScrollZ
 - yum install tig
+- yum install sbcl
+- yum install fortune-mod
+
+* Add other things
+- Get the right racket for http://racket-lang.org/download/
 
 * Remove some things
 - yum uninstall java
