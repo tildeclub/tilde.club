@@ -33,7 +33,7 @@
 - yum install tig
 - yum install sbcl
 - yum install fortune-mod
-
+- yum install irssi
 * Add other things
 - Get the right racket for http://racket-lang.org/download/
 
