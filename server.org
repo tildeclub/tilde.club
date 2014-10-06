@@ -2,7 +2,7 @@
 
 * Base machine
 - A standard unix server
-- Webmin (people complain but webmin is great)
+- Webmin (people complain but webmin is great) + Net:SSLeay (see below)
 
 * Add these repos
 - sudo yum update
@@ -17,3 +17,4 @@
 - sudo yum --enablerepo=epel install -y mosh
 - sudo yum install mailman
 - sudo yum install ScrollZ
+- sudo yum install libnet-ssleay-perl (so that webmin uses HTTPS rather than HTTP)
