@@ -1,0 +1,1540 @@
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.92 BogoMIPS (lpj=20009619)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.61 BogoMIPS (lpj=20008079)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4003.79 BogoMIPS (lpj=20018955)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.39 BogoMIPS (lpj=20006996)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.58 BogoMIPS (lpj=20007919)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.55 BogoMIPS (lpj=20007760)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.48 BogoMIPS (lpj=20007436)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.53 BogoMIPS (lpj=20007694)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.37 BogoMIPS (lpj=20006856)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.25 BogoMIPS (lpj=20006296)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.84 BogoMIPS (lpj=20009248)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.37 BogoMIPS (lpj=20006885)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4003.66 BogoMIPS (lpj=20018301)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4003.28 BogoMIPS (lpj=20016414)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.33 BogoMIPS (lpj=20006674)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.64 BogoMIPS (lpj=20008232)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4003.93 BogoMIPS (lpj=20019653)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4005.05 BogoMIPS (lpj=20025267)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.42 BogoMIPS (lpj=20007117)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.85 BogoMIPS (lpj=20009260)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.73 BogoMIPS (lpj=20008675)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4001.64 BogoMIPS (lpj=20008232)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4005.48 BogoMIPS (lpj=20027415)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
+ Linux version 2.6.16-xenU (builder@xenbat.amazonsa) (gcc version 4.0.1 20050727 (Red Hat 4.0.1-5)) #1 SMP Mon May 28 03:41:49 SAST 2007
+BIOS-provided physical RAM map:
+ Xen: 0000000000000000 - 0000000026700000 (usable)
+0MB HIGHMEM available.
+623MB LOWMEM available.
+NX (Execute Disable) protection: active
+IRQ lockup detection disabled
+Built 1 zonelists
+Kernel command line: root=/dev/sda1 ro 4
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Xen reported: 1999.975 MHz processor.
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Software IO TLB disabled
+vmalloc area: e7800000-f53fe000, maxmem 2d7fe000
+Memory: 618496k/637952k available (1958k kernel code, 10960k reserved, 620k data, 144k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 4004.29 BogoMIPS (lpj=20021458)
+Mount-cache hash table entries: 512
+CPU: L1 I cache: 32K, L1 D cache: 32K
+CPU: L2 cache: 256K
+CPU: L3 cache: 12288K
+Checking 'hlt' instruction... OK.
+Brought up 1 CPUs
+migration_cost=0
+Grant table initialized
+NET: Registered protocol family 16
+Brought up 1 CPUs
+xen_mem: Initialising balloon driver.
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+i8042.c: No controller found.
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Xen virtual console successfully installed as tty1
+Event-channel device installed.
+netfront: Initialising virtual ethernet driver.
+mice: PS/2 mouse device common for all mice
+md: md driver 0.90.3 MAX_MD_DEVS=256, MD_SB_DISKS=27
+md: bitmap version 4.39
+NET: Registered protocol family 2
+Registering block device major 8
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Using IPI No-Shortcut mode
+XENBUS: Timeout connecting to devices!
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(8,1)
