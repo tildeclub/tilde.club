@@ -1,65 +1,116 @@
 #+TITLE: Server Configuration
-[1;3B
+
+* Preface
+
+This is a literate shell program written. The formatting is pretty
+straightforward. You can have documentation and code mixed up and make
+nice PDFs but also spit out code. It's good for public projects.
+
+Let's set up a tilde.club server!
+
 * Base machine
-- A standard unix server
-- yum install perl-Net-SSLeay
-- Webmin (people complain but webmin is great)
-- (Need perl-net-SSLeay for webmin)
+- A standard unix server, Ubuntu or CentOS. 
+- [TK explain servers and server math]
 
-* Run yum like so:
-- yum update
-- yum install httpd
-- yum install emacs
-- yum install tmux
-- yum install talk-server
-- yum install htop
-- yum install elinks lynx
-- yum install figlet
-- yum install ImageMagick
-- yum --enablerepo=epel install -y mosh
-- yum install mailman
-- yum install tree
-- yum install nail [?why did I did this]
-- yum install postfix
-- yum install alpine
-- yum install pico
-- yum install readline
-- yum groupinstall "Development Tools"
-- yum install gcc
-- [chmod the gcc cc in /usr/bin to 700 root]
-- yum install gcc
-- yum install nodejs
-- yum install ScrollZ
-- yum install tig
-- yum install sbcl
-- yum install fortune-mod
-- yum install irssi
+* TODO Getting started
+- [ ] Add apropos descriptions for each application?
+
+We need to start by installing some basics.
+
+First we automatically upgrade the system
+
+#+begin_src bash
+echo "Installing basics"
+yum upgrade
+#+end_src
+
+And we remove Java; it's a beast and it takes a lot of memory and is
+generally a pretty bad citizen on machines that many people share.
+
+#+begin_src bash
+echo "Removing java"
+yum uninstall java
+#+end_src
+
+Then we fetch the version control management software "git" which
+allows us to load recently updated code from public code
+repositories. And we get nodejs, which provides us with an
+implementation of JavaScript, a programming language that we need to
+run our IRC server.
+
+#+begin_src bash
+yum install git-core
+yum install nodejs
+yum install npm
+#+end_src
+
+* Servers
+Now we install servers, which allow client software to connect and
+issue commands. Each server is like a small computer unto itself.
+
+The first server we fetch is Webmin, which is a systems administration
+tool that you can use from the web.
+
+#+begin_src bash
+echo "Installing servers"
+echo "1) Webmin"
+yum install libnet-ssleay-perl # (so that webmin uses HTTPS rather than HTTP)
+wget http://prdownloads.sourceforge.net/webadmin/webmin-1.710-1.noarch.rpm
+rpm -U webmin-1.710-1.noarch.rpm
+echo "2) HTTPD/Apache"
+yum install httpd 
+echo "3) Unix Talk"
+yum install talk-server 
+echo "4) IRCD"
+git clone https://github.com/alexyoung/ircd.js
+cd ircd.js
+# TODO FINISH INSTALL OF IRCD
+echo "5) postfix mail server"
+yum install postfix
+#+end_src
+
+** TODO Is postfix even necessary?
+
+- [ ] We could just do maildrop.
+- [ ] I do not know.
+
+** TODO Log into webmin and set things up?
+
+** TODO Finish the installation of the IRC server
+
+** TODO Finish the installation of the NNTP server (INN?)
+
+
+* Applications
+#+begin_src bash
+yum install emacs
+yum install tmux
+yum install htop
+yum install elinks 
+yum install nail # [?why did I did this]
+yum install lynx
+yum install figlet
+yum install ImageMagick
+yum --enablerepo=epel install -y mosh
+# Irc clients
+yum install scrollz
+yum install irssi
+yum install alpine
+yum install pico
+yum install readline
+yum install tig
+yum install sbcl
+yum install fortune-mod
+#+end_src
+
+** TODO Figure out mosh ports
+** TODO Decided if we want mailman for internal private mailing lists. Probably so!
+
+* Development Tools
+yum groupinstall "Development Tools"
+yum install gcc
+chmod 700 /usr/bin/gcc*
+chmod 700 /usr/bin/cc*
+
 * Add other things
-- Get the right racket for http://racket-lang.org/download/
-
-* Remove some things
-- yum uninstall java
-
-* Add these servers
-- IRC: https://github.com/alexyoung/ircd.js
-- USENET: [???]
-
-
-=======
-- Webmin (people complain but webmin is great) + Net:SSLeay (see below)
-
-* Add these repos
-- sudo yum update
-- sudo yum install httpd
-- sudo yum install emacs
-- sudo yum install tmux
-- sudo yum install talk-server
-- sudo yum install htop
-- sudo yum install elinks lynx
-- sudo yum install figlet
-- sudo yum install ImageMagick
-- sudo yum --enablerepo=epel install -y mosh
-- sudo yum install mailman
-- sudo yum install ScrollZ
-- sudo yum install libnet-ssleay-perl (so that webmin uses HTTPS rather than HTTP)
->>>>>>> 72a7b45bdbeadda390d5a6a2284c5bc03856dd9c
+- Get the right racket for the box at http://racket-lang.org/download/
