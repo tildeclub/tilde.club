@@ -6,10 +6,10 @@ If you want access to [tilde.club](http://tilde.club), create a new key pair wit
 
 1. Open **Terminal** (in /Applications/Utilities).
 1. In the **Terminal** window, paste the following:
-{{{
+<pre>
 mkdir -p ~/.ssh                 # Create your .ssh directory
 ssh-keygen -f ~/.ssh/tilde.club # Create your keys
-}}}
+</pre>
 1. The `ssh-keygen` program will generate two new keys (private and public), and prompt you for a password. Please set a good password (at least 9 characters, and not just letters or numbers). Make a note of it somewhere safe.
 1. `open ~/.ssh # Open your .ssh directory`
 1. Email ford@ (our friendly host) and attach `tilde.club.pub` to the email (it should be visible in the Finder. **Do not** attach `tilde.club` -- that is your *private* key, which you should never share.
