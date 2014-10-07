@@ -1,10 +1,10 @@
 #+TITLE: Server Configuration
-
 * Preface
 
 This is a literate shell program written. The formatting is pretty
 straightforward. You can have documentation and code mixed up and make
-nice PDFs but also spit out code. It's good for public projects.
+nice PDFs but also spit out code. It's good for public projects. It
+looks okay on Github. I'll set it up so that it automatically exports a companion shell script in time.
 
 Let's set up a tilde.club server!
 
