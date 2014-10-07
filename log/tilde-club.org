@@ -4,10 +4,10 @@ The org-mode parser on github doesn't understand lists, sadly. So a lot
 of this file is invisible. View raw or check out the HTML output that is
 also in this directory.
 
-* Launch <2014-10-01 Wed>
+* Launch <2014-10-01 Wed>                                          :PaulFord:
 - I think this was the day it launched. I honestly can't remember.
 
-* Crash <2014-10-04 Sat>
+* Crash <2014-10-04 Sat>                                           :PaulFord:
 ** Notes
 - Informed of problem via Twitter.
 - [Redacted] user wrote to say:
@@ -27,12 +27,12 @@ I'm going to put myself in an infinite loop of timeout
 - Renamed bad .bashrc so that it would not execute when user logged in
 
 
-* Backup <2014-10-04 Sat>
+* Backup <2014-10-04 Sat>                                          :PaulFord:
 - Backed up =/var=, =/etc=, and =/home=.
 - Saved to Paul Ford's home computer.
 
 
-* Server Crash <2014-10-07 Tue>
+* Server Crash <2014-10-07 Tue>                                    :PaulFord:
 ** Notes
 - System log on AWS was last updated on Saturday, 10/4--at time of last bootup.
 
