@@ -1,5 +1,5 @@
 #+TITLE: Server Configuration
-
+[1;3B
 * Base machine
 - A standard unix server
 - yum install perl-Net-SSLeay
@@ -45,3 +45,21 @@
 - USENET: [???]
 
 
+=======
+- Webmin (people complain but webmin is great) + Net:SSLeay (see below)
+
+* Add these repos
+- sudo yum update
+- sudo yum install httpd
+- sudo yum install emacs
+- sudo yum install tmux
+- sudo yum install talk-server
+- sudo yum install htop
+- sudo yum install elinks lynx
+- sudo yum install figlet
+- sudo yum install ImageMagick
+- sudo yum --enablerepo=epel install -y mosh
+- sudo yum install mailman
+- sudo yum install ScrollZ
+- sudo yum install libnet-ssleay-perl (so that webmin uses HTTPS rather than HTTP)
+>>>>>>> 72a7b45bdbeadda390d5a6a2284c5bc03856dd9c
