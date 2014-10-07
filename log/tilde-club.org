@@ -1,5 +1,9 @@
 #+TITLE: Server Log: tilde.club
 
+The org-mode parser on github doesn't understand lists, sadly. So a lot
+of this file is invisible. View raw or check out the HTML output that is
+also in this directory.
+
 * Launch <2014-10-01 Wed>
 - I think this was the day it launched. I honestly can't remember.
 
