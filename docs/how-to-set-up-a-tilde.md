@@ -4,7 +4,7 @@ This document will talk you through setting up your own tilde.club flavoured ser
 
 ## Prerequisites
 
-* An [Amazon AWS account](https://aws.amazon.com)
+* An [Amazon AWS account](https://aws.amazon.com), though any other cloud provider would work just as well.
 * Your own domain
 * A thirst for the unknown
 
