@@ -1,5 +1,17 @@
 # FAQ
 
+##  
+      _______________________________________
+     / WELCOME TO TILDE.CLUB A PLACE FOR WEB \
+     \ PAGES                                 /
+      ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
 ## How did this get started?
 
 [The origin story is here] (http://tilde.club/~ford/) along with a bunch of other stuff.
@@ -9,3 +21,5 @@
 - [Skillswap is here] ( http://goo.gl/forms/LT2bDgtmwH)
 - [Github is here] (https://github.com/ftrain/tilde.club)
 - [Webring is here] (http://tilde.club/~harper/link.html?action=join)
+
+##
