@@ -1,13 +1,11 @@
 # FAQ
 
-## Is this Markdown?
-Yes, it is. [It is markdown](http://markdown.org), a simple textual format that is quite popular.
+## How did this get started?
 
-## What does it do?
-> It indents things and links them. It does a lot of other stuff.
+[The origin story is here] (http://tilde.club/~ford/) along with a bunch of other stuff.
 
-### It knows about hierarchy-
-- And it knows about lists
-- And items in lists
-- Overall it's an okay subset of HTML for most daily communication tasks
-- And highly modeled on email.
+## What else? Not much for now.
+- [Waitlist is here] (http://goo.gl/forms/gRMRT1YBU4)
+- [Skillswap is here] ( http://goo.gl/forms/LT2bDgtmwH)
+- [Github is here] (https://github.com/ftrain/tilde.club)
+- [Webring is here] (http://tilde.club/~harper/link.html?action=join)
