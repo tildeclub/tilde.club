@@ -1,10 +1,11 @@
 ## Preamble
 
-This document will talk you through setting up your own tilde.club flavoured server.
+This document will talk you through setting up your own tilde.club flavoured server; the example `domain.club` is used below. 
 
 ## Prerequisites
 
 * An [Amazon AWS account](https://aws.amazon.com)
+* Your own domain
 * A thirst for the unknown
 
 ## Create an instance on Amazon EC2
