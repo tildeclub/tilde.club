@@ -15,9 +15,15 @@ This document will talk you through setting up your own tilde.club flavoured ser
 * Select `t2.micro`
 * Select the (recommended) thingy in the popup
 * Click `Launch`
-* In `Security Groups` right-click:
-   * `Edit inbound rules` -> `Add Rule` -> `HTTP` and `SSH`
-   * `Edit outbound rules` -> `Add Rule` -> `HTTP` and `HTTPS`
+* In `Security Groups`:
+  * Right click on the security group used by your instance and:
+    * Click `Edit inbound rules`
+      * Add a rule for `HTTP`
+      * Add a rule for `SSH`
+  * Again, right click on the security group used by your instance and:
+    * Click `Edit outbound rules`
+      * Add a rule for `HTTP`
+      * Add a rule for `HTTPS`
 * In `Elastic IPs`:
    * Click `Allocate New Address`
    * Choose `VPC` on the dropdown (it won't work otherwise, I forget why)
