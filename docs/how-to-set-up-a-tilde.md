@@ -45,12 +45,14 @@ This document will talk you through setting up your own tilde.club flavoured ser
 * `sudo vim /etc/ssh/sshd_config` change `PasswordAuthentication` to `yes`
 * `sudo service sshd restart`
 
-## Create a user `bill` with correct permissions
+## Create a test user `foo` account and `public_html` folder
 
-* `sudo adduser bill`
-* `sudo passwd bill`
-* `mkdir /home/bill/public_html`
-* `sudo chmod 755 /home/bill`
+* `sudo adduser foo`
+* `sudo passwd foo`
+* `sudo mkdir /home/foo/public_html`
+* `sudo chown foo:foo /home/foo/public_html`
+* `sudo chmod 755 /home/foo`
+* `sudo chmod 755 /home/foo/public_html`
 
 ## Install Apache
 
