@@ -2,8 +2,8 @@
 # FAQ
 
       _______________________________________
-     / WELCOME TO TILDE.CLUB A PLACE FOR WEB \
-     \ PAGES                                 /
+     / WELCOME TO TILDE.CLUB A place for web \
+     \ pages                                 /
       ---------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -32,3 +32,9 @@ For other stuff you might want in the FAQ drop us a note to ~faq.
 
 We've got a lot of people on the waitlist. Our goal is to get those people in to tilde.club. We have some capacity and process issues to work out first, but they're being actively worked on. We can't wait to meet you.
 
+        __         .' '.
+      _/__)        .   .       .
+     (8|)_}}- .      .        .
+      `\__)    '. . ' ' .  . '
+
+no drama. be respectful. have fun. 
