@@ -15,6 +15,10 @@
 
 [The origin story is here](http://tilde.club/~ford/) along with a bunch of other stuff. [Paul wrote this for Medium](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf).
 
+## Can you help me with some things?
+
+Maybe? Try checking out [~pfhawkins Tilde Tips and Tricks page](http://tilde.club/~pfhawkins/tipsntricks.html). It's useful.
+
 ## What else? Not much for now.
 - [Waitlist is here](http://goo.gl/forms/gRMRT1YBU4)
 - [Skillswap is here](http://goo.gl/forms/LT2bDgtmwH)
@@ -23,4 +27,4 @@
 
 ## What about the waitling list?
 
-We've got a lot of peopele on the waitlist. Our goal is to get those people in to tilde.club. We have some capacity and process issues to work out first, but they're being actively worked on. We can't wait to meet you.
+We've got a lot of people on the waitlist. Our goal is to get those people in to tilde.club. We have some capacity and process issues to work out first, but they're being actively worked on. We can't wait to meet you.
