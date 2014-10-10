@@ -25,6 +25,6 @@ Maybe? Try checking out [~pfhawkins Tilde Tips and Tricks page](http://tilde.clu
 - [Github is here](https://github.com/tildeclub/tilde.club)
 - [Webring is here](http://tilde.club/~harper/link.html?action=join)
 
-## What about the waitling list?
+## What about the waiting list?
 
 We've got a lot of people on the waitlist. Our goal is to get those people in to tilde.club. We have some capacity and process issues to work out first, but they're being actively worked on. We can't wait to meet you.
