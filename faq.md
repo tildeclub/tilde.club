@@ -28,7 +28,7 @@ For other stuff you might want in the FAQ drop us a note to ~faq.
 - [Github is here](https://github.com/tildeclub/tilde.club)
 - [Webring is here](http://tilde.club/~harper/link.html?action=join)
 
-## What about the waitling list?
+## What about the waiting list?
 
 We've got a lot of people on the waitlist. Our goal is to get those people in to tilde.club. We have some capacity and process issues to work out first, but they're being actively worked on. We can't wait to meet you.
 
