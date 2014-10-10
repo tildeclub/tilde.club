@@ -1,3 +1,9 @@
+<html>
+  <head>
+     <title>tilde.club faq</title>
+  </head>
+
+<body>
 # FAQ
 
       _______________________________________
@@ -30,3 +36,6 @@ For other stuff you might want in the FAQ drop us a note to ~faq.
 ## What about the waitling list?
 
 We've got a lot of people on the waitlist. Our goal is to get those people in to tilde.club. We have some capacity and process issues to work out first, but they're being actively worked on. We can't wait to meet you.
+
+</body>
+</html>
