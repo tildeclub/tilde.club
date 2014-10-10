@@ -17,7 +17,9 @@
 
 ## Can you help me with some things?
 
-Maybe? Try checking out [~pfhawkins Tilde Tips and Tricks page](http://tilde.club/~pfhawkins/tipsntricks.html). It's useful. For other stuff you might want in the FAQ drop us a note to ~faq.
+Maybe? 
+Try checking out [~pfhawkins' Tilde Tips and Tricks page](http://tilde.club/~pfhawkins/tipsntricks.html). It's useful. He also suggests [~anthonydpaul's primer] (http://tilde.club/~anthonydpaul/primer.html).
+For other stuff you might want in the FAQ drop us a note to ~faq.
 
 ## What else? Not much for now.
 - [Waitlist is here](http://goo.gl/forms/gRMRT1YBU4)
