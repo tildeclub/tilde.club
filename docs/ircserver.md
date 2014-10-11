@@ -8,7 +8,7 @@ The IRC server is an Amazon EC2 instance running Ubuntu. Initial system setup on
 
 * Setting the hostname (`sudo hostname irc`) (and perhaps also needing to edit the `/etc/hostname` file -- unclear)
 * updating the `/etc/hosts` file (add `172.30.0.216 irc.tilde.club irc` and `172.30.0.176 tilde.club tilde`)
-* setting the EC2 security group to allow TCP traffic on port 6667 from the `tilde.club` shell server only
+* setting the EC2 security group to allow TCP traffic on ports 6667 and 6697 from the `tilde.club` shell server only
 
 ### Setup changes on the tilde.club shell server to access the IRC server
 
