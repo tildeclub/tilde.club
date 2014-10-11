@@ -107,10 +107,12 @@ yum install fortune-mod
 ** TODO Decided if we want mailman for internal private mailing lists. Probably so!
 
 * Development Tools
+#+begin_src bash
 yum groupinstall "Development Tools"
 yum install gcc
 chmod 700 /usr/bin/gcc*
 chmod 700 /usr/bin/cc*
+#+end_src
 
 * Add other things
 - Get the right racket for the box at http://racket-lang.org/download/
