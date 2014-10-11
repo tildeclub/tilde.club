@@ -41,7 +41,7 @@ sudo /usr/bin/charybdis-genssl
 
 I'm not sure if it's critical, but I set the cert's common name to the same name I chose for the IRC server (`irc.tilde.club`); I answered the rest of the questions logically (`US`, `DC`, `Washington`, `tilde.club` for the org name, `delfuego@tilde.club` for the contact email).
 
-The next step was to edit the `/etc/charybdis/ircd.conf` file. There are a bunch of settings here, organized into sections; these are the important ones.
+The next step was to edit the `/etc/charybdis/ircd.conf` file. There are [a bunch of settings](http://www.stack.nl/~jilles/irc/charybdis-oper-guide/index.htm) here, organized into sections; these are the important ones.
 
 ### serverinfo section
 
