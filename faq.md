@@ -37,4 +37,4 @@ We've got a lot of people on the waitlist. Our goal is to get those people in to
      (8|)_}}- .      .        .
       `\__)    '. . ' ' .  . '
 
-no drama. be respectful. have fun. 
+no drama. be respectful. have fun. we're all trying, and were all in this together.
