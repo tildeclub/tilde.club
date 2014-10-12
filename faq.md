@@ -10,24 +10,35 @@
                 ||----w |
                 ||     ||
 
+## Looking to join? We can't wait to meet you!
 
-## How did this get started?
+We have some capacity and process issues to work out, but they're being actively worked on. [Follow the discussion here](https://github.com/tildeclub/tilde.club/issues/18) and join [the waitlist here](http://goo.gl/forms/gRMRT1YBU4)!
 
-[The origin story is here](http://tilde.club/~ford/) along with a bunch of other stuff. [Paul wrote this for Medium](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf).
+[Several alternate sites have sprouted up](http://tilde.club/%7Epfhawkins/othertildes.html) and they have no waiting list. Feel free to join one and we can start working on ways to get everyone connected into one happy hyperlinked network of shared interests.
 
-## Can you help me with some things?
 
-Maybe?  
-Try checking out [~pfhawkins' Tilde Tips and Tricks page](http://tilde.club/~pfhawkins/tipsntricks.html). It's useful. He also suggests [~anthonydpaul's primer](http://tilde.club/~anthonydpaul/primer.html).
-For other stuff you might want in the FAQ drop us a note to ~faq.
+## How did this accidentally awesome thing get started?
 
-## What else? Not much for now.
-- [Waitlist is here](http://goo.gl/forms/gRMRT1YBU4)
-- [Skillswap is here](http://goo.gl/forms/LT2bDgtmwH)
-- [Github is here](https://github.com/tildeclub/tilde.club)
-- [Webring is here](http://tilde.club/~harper/link.html?action=join)
+[Paul wrote an explanation on Medium](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf) and you can follow along with his thinking
+[on his tilde blog](http://tilde.club/~ford/).
 
-## What about the waiting list?
+## I'm on Tilde, now what?
+
+First things first: please read our short and important netiquette document. (link TBD). Tilde has a great community culture and we're trying hard to keep it that way.
+
+In short:    
+- DON'T HACK THE GIBSON.
+- no drama. be respectful. have fun. we're all trying, and we're all in this together :)
+
+## Got it, don't be a jerk. But how do I, like, do things?
+
+[~anthonydpaul's got you covered with the unofficial official tilde primer](http://tilde.club/~anthonydpaul/primer.html).
+
+## Other links
+ 
+- [Skillswap](http://goo.gl/forms/LT2bDgtmwH)
+- [Github](https://github.com/tildeclub/tilde.club)
+- [Webring](http://tilde.club/~harper/link.html?action=join)
 
 We've got a lot of people on the waitlist. Our goal is to get those people in to tilde.club or onto another server that they can share with other people. We have some capacity and process issues to work out first, but they're being actively worked on. We can't wait to meet you.
 
@@ -36,4 +47,3 @@ We've got a lot of people on the waitlist. Our goal is to get those people in to
      (8|)_}}- .      .        .
       `\__)    '. . ' ' .  . '
 
-no drama. be respectful. have fun. we're all trying, and we're all in this together.
