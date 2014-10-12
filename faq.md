@@ -1,4 +1,3 @@
-
 # FAQ
 
       _______________________________________
@@ -30,7 +29,7 @@ For other stuff you might want in the FAQ drop us a note to ~faq.
 
 ## What about the waiting list?
 
-We've got a lot of people on the waitlist. Our goal is to get those people in to tilde.club. We have some capacity and process issues to work out first, but they're being actively worked on. We can't wait to meet you.
+We've got a lot of people on the waitlist. Our goal is to get those people in to tilde.club or onto another server that they can share with other people. We have some capacity and process issues to work out first, but they're being actively worked on. We can't wait to meet you.
 
         __         .' '.
       _/__)        .   .       .
