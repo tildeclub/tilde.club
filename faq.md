@@ -17,7 +17,7 @@
 
 ## Can you help me with some things?
 
-Maybe? 
+Maybe?  
 Try checking out [~pfhawkins' Tilde Tips and Tricks page](http://tilde.club/~pfhawkins/tipsntricks.html). It's useful. He also suggests [~anthonydpaul's primer](http://tilde.club/~anthonydpaul/primer.html).
 For other stuff you might want in the FAQ drop us a note to ~faq.
 
@@ -36,4 +36,4 @@ We've got a lot of people on the waitlist. Our goal is to get those people in to
      (8|)_}}- .      .        .
       `\__)    '. . ' ' .  . '
 
-no drama. be respectful. have fun. we're all trying, and were all in this together.
+no drama. be respectful. have fun. we're all trying, and we're all in this together.
