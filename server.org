@@ -40,8 +40,8 @@ run our IRC server.
 
 #+begin_src bash
 yum install git-core
-yum install nodejs
-yum install npm
+yum --enablerepo=epel install nodejs
+yum --enablerepo=epel install npm
 #+end_src
 
 * Servers
@@ -54,7 +54,7 @@ tool that you can use from the web.
 #+begin_src bash
 echo "Installing servers"
 echo "1) Webmin"
-yum install libnet-ssleay-perl # (so that webmin uses HTTPS rather than HTTP)
+yum install perl-Net-SSLeay # (so that webmin uses HTTPS rather than HTTP)
 wget http://prdownloads.sourceforge.net/webadmin/webmin-1.710-1.noarch.rpm
 rpm -U webmin-1.710-1.noarch.rpm
 echo "2) HTTPD/Apache"
@@ -93,7 +93,7 @@ yum install figlet
 yum install ImageMagick
 yum --enablerepo=epel install -y mosh
 # Irc clients
-yum install scrollz
+yum install ScrollZ
 yum install irssi
 yum install alpine
 yum install pico
