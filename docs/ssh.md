@@ -59,6 +59,18 @@ The easiest way to generate a key pair on Windows is to use [PuTTY](http://www.c
 
 Note that you can save these settings from that first page of the main PuTTY window, so you don't have to do this every time. You can also use [Pageant](http://the.earth.li/~sgtatham/putty/0.58/htmldoc/Chapter9.html) (another part of the **PuTTY** kit) to store your keys so you don't need to enter them each time you login.
 
+## Android
+
+### Generating your key pair
+
+1. There are several SSH terminals in the Play store. [JuiceSSH](http://juicessh.com) is one of them, try it out, see if you like it.
+2. Follow this [tutorial](http://sonelli.freshdesk.com/support/solutions/articles/187068-how-do-i-generate-an-ssh-key-within) for generating a key pair with JuiceSSH.
+
+### Using your key pair
+
+1. For JuiceSSH, follow this [tutorial](http://sonelli.freshdesk.com/support/solutions/articles/178806-how-to-create-define-a-new-ssh) on defining new credentials.
+2. Let us know how it goes!
+
 ## Why go through all this?
 
 One of the weakest links in online account security is your password. If someone were to take over the tilde server (specifically the SSH server, `sshd`), they would be able to capture the passwords of everyone who uses a password to log in. (This isn't theoretical -- [it has actually happened](http://www.apache.org/info/20010519-hack.html).) If users use their SSH keys to log in instead, hackers can't do this anymore; a user's private key never leaves their own computer and can't be captured on the server.
