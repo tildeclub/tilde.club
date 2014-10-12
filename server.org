@@ -101,6 +101,7 @@ yum install readline
 yum install tig
 yum install sbcl
 yum install fortune-mod
+yum install tidy
 #+end_src
 
 ** TODO Figure out mosh ports
