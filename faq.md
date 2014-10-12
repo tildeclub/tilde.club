@@ -24,9 +24,8 @@ We have some capacity and process issues to work out, but they're being actively
 
 ## I'm on Tilde, now what?
 
-First things first: please read our short and important netiquette document. (link TBD). Tilde has a great community culture and we're trying hard to keep it that way.
+Tilde has a great community culture and we're trying hard to keep it that way. We're working on some netiquette outlines for people who are new to all of this. In the meantime... 
 
-In short:    
 - DON'T HACK THE GIBSON.
 - no drama. be respectful. have fun. we're all trying, and we're all in this together :)
 
