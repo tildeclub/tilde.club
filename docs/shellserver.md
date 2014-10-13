@@ -18,7 +18,7 @@ The default MTA on CentOS is `postfix`. Our goal was to have a `localhost`-only 
 Users will connect from their shell account to an IRC server, so it is *very* handy to have an `identd` server. For us that just meant installing the standard CentOS `identd` server and configuring it to start automatically:
 
 ```
-sudo apt-get install identd
+sudo yum install oidentd
 sudo /etc/init.d/oidentd start
 sudo chkconfig oidentd on
 ```
