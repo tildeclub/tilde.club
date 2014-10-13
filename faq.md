@@ -34,15 +34,15 @@ Tilde has a great community culture and we're trying hard to keep it that way. W
 [~anthonydpaul's got you covered with the unofficial official tilde primer](http://tilde.club/~anthonydpaul/primer.html).
 
 ## Other links
- 
-- [Skillswap](http://goo.gl/forms/LT2bDgtmwH)
 - [Github](https://github.com/tildeclub/tilde.club)
-- [Webring](http://tilde.club/~harper/link.html?action=join)
+- [Webring](http://tilde.club/~harper/link.html?action=join) 
+- [Skillswap](http://goo.gl/forms/LT2bDgtmwH)
 
- We can't wait to meet you.
-
-        __         .' '.
-      _/__)        .   .       .
-     (8|)_}}- .      .        .
-      `\__)    '. . ' ' .  . '
+We can't wait to meet you.
+ 
+ 
+         __         .' '.
+       _/__)        .   .       .
+      (8|)_}}- .      .        .
+       `\__)    '. . ' ' .  . '
 
