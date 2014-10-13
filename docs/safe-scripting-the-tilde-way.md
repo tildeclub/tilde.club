@@ -13,43 +13,19 @@ As Paul says:
 What does that mean with respect to scripting and programming on a shared host?
 
 - DOs
-    - Do respect the shared CPU/Disk/Network resources
-    - Do keep things that require a tilde.club login off the internet:
+    - Respect shared CPU/Disk/Network resources
+    - Keep things that require a tilde.club login off the internet:
         - Finger info
-        - .plan and .profile files
-        - local home directory files
+        - local home directory files such as `~/.plan` and `~/.profile` files
         - Note: Exceptions could include an opt-in file or special permissions from the user.
-    - Only scan homedirs with a .public file
-    - *What about `public_html` dirs? -- mc*
+    - Respect `robots.txt` when writing web crawlers
 
-- DON'Ts
-    - Don't look at others mail files or .ssh/ dir 
-    - Do not attempt to circumvent file and directory permissions or logins
 
 In short use your common sense and consider how your actions may affect others.
   
 If you are unsure if something is a good idea or not, head to irc or message using the `wall` command and ask others what they think.  
 
 If you want a conclusive answer, contact one of the system operators.
-
-#### Ways we can help others stay private
-
-Because we generally have access across the server and there are quite a few users, we may not know who is willing share their data.
-
-##### The `~/.public` file
-In order to be sure, any code that looks into a user homedir will check for the existence of a `~/.public` file before going further.  If the file doesn't exist that directory will be skipped.  
-
-The way this would work in bash would be:
-
-    if [ -f $userdir/.public ]
-    then 
-        command $userdir | process >> outputfile
-    else
-        next
-    fi
-
-Other scripting examples provided upon request (please submit)
-
 
 ##### Thinking privacy
 
@@ -58,8 +34,6 @@ Consider the source of the data.
 E.g. We know that finger data might contain personal data such as phone numbers, and other identifying information and is not generally available without a tilde.club login. 
 
 Before exposing data such as this to the world, it should check for an opt in file such as the .public file file test before presenting info to the outside world. 
-*(should ~/.public also signify stuff like this or something else? can it be an ad-hoc opt-in file? --mc)*
-
 
 #### Shared Resources
 
