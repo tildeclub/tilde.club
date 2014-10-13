@@ -39,7 +39,7 @@ Tilde has a great community culture and we're trying hard to keep it that way. W
 - [Github](https://github.com/tildeclub/tilde.club)
 - [Webring](http://tilde.club/~harper/link.html?action=join)
 
-We've got a lot of people on the waitlist. Our goal is to get those people in to tilde.club or onto another server that they can share with other people. We have some capacity and process issues to work out first, but they're being actively worked on. We can't wait to meet you.
+ We can't wait to meet you.
 
         __         .' '.
       _/__)        .   .       .
