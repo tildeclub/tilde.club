@@ -15,7 +15,7 @@
 
 Tenemos algún que otro problema de capacidad y organización que solucionar, pero estamos trabajando activamente en ello. ¡[Sigue la conversación aquí](https://github.com/tildeclub/tilde.club/issues/18) y únete a la lista de espera [aquí](http://goo.gl/forms/gRMRT1YBU4)!
 
-[Varios clubs alternativos han surgido](http://tilde.club/%7Epfhawkins/othertildes.html) y carecen de lista de espera. Únete a alguno de ellos mientras trabajamos en la forma de conectarnos a todos en una feliz e interconectada red de intereses comunes.
+[Varios clubs alternativos han surgido](http://tilde.club/%7Epfhawkins/othertildes.html) y carecen de lista de espera. Únete a alguno de ellos mientras trabajamos en la forma de conectarnos en una feliz e hipervinculada red de intereses comunes.
 
 ## ¿Cómo surgió esta cosa accidentalmente increíble?
 
