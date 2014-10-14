@@ -2,8 +2,8 @@
 # FAQ EN ESPAÑOL
 
       ________________________________________
-     / BIENVENIDO A  TILDE.CLUB Un sitio para \
-     \ paginas                                /
+     / BIENVENIDO A TILDE.CLUB Un lugar para  \
+     \ las páginas web                        /
       ----------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -11,38 +11,34 @@
                 ||----w |
                 ||     ||
 
-## Quieres unirte estaremos encantados de conocerte!
+## ¿Quieres unirte? ¡Estaremos encantados de conocerte!
 
-Tenemos algun que otro problema con capacidad y proceso que resolver primero, pero estamos trabajando en ello. [Sigue la conversacion aqui](https://github.com/tildeclub/tilde.club/issues/18) y unete a la lista de espera [aqui](http://goo.gl/forms/gRMRT1YBU4)
+Tenemos algún que otro problema de capacidad y organización que solucionar, pero estamos trabajando activamente en ello. ¡[Sigue la conversación aquí](https://github.com/tildeclub/tilde.club/issues/18) y únete a la lista de espera [aquí](http://goo.gl/forms/gRMRT1YBU4)!
 
-[Algunos Clubs de tilde alternativo han aprecido](http://tilde.club/%7Epfhawkins/othertildes.html)Y ellos no tienen lista de espera.Puedes unirte a ellos y podemos empezar a encontrar metodos para conectarlos todos en una red feliz, hyperconectado y con intereses parecidos.
+[Varios clubs alternativos han surgido](http://tilde.club/%7Epfhawkins/othertildes.html) y carecen de lista de espera. Únete a alguno de ellos mientras trabajamos en la forma de conectarnos a todos en una feliz e interconectada red de intereses comunes.
 
+## ¿Cómo surgió esta cosa accidentalmente increíble?
 
-##Como empezo todo esto?
+[Paul ha escrito una explicacion en Medium](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf) y puedes leer su ideas [en su blog en tilde](http://tilde.club/~ford/).
 
-[Paul Escribio una explicacion en Medium](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf) puedes seguir 
-[su blog para obtener mas informacion](http://tilde.club/~ford/).
+## Ya estoy en Tilde, ¿y ahora qué?
 
-##Ya estoy en Tilde, ahora que?
-Tilde tiene una cultura de communidad y estamos trabajando duro para mantenerlo. Estamos trabajando en algunos modos de portarse (Netiquette) en tilde.club para aquellos nuevos. 
-Pero hasta entonces: 
+Tilde cuenta con un gran espíritu de communidad y estamos intentando por todos los medios que se mantenga así. Estamos redactando unas normas de etiqueta para los recién llegados. Mientras tanto…
 
--NO HACKEAR EL GIBSON!! ( [El GIBSON](http://www.urbandictionary.com/define.php?term=Hack+the+Gibson) ) 
--Nada de drama, ser respetuosa.
--Diviertete. 
--Todos estamos intentando hacer algo y estamos todos  juntos en esto.
+- ¡NO PIRATEES EL GIBSON!
+- Nada de dramas. Se respetuoso. Diviértete. Nos estamos esforzando y estamos todos juntos en esto.
 
+## Lo he pillado, no seas un capullo. Pero cómo, ehhh, ¿hago cosas?
 
-## Ok lo entiendo no seas un capullo. Pero como hago...?
+[~anthonydpaul te tiene cubierto con el tutorial oficial no oficial introductorio](http://tilde.club/~anthonydpaul/primer.html).
 
-[~anthonydpaul's te tiene cubierto con el tutorial para principiantes](http://tilde.club/~anthonydpaul/primer.html).
+## Otros enlaces
 
-## Otros links
 - [Github](https://github.com/tildeclub/tilde.club)
 - [Webring](http://tilde.club/~harper/link.html?action=join) 
 - [Skillswap](http://goo.gl/forms/LT2bDgtmwH)
 
-Deseando conocerte.
+Estamos deseando conocerte.
 
  
  
