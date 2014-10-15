@@ -102,6 +102,7 @@ yum install tig
 yum install sbcl
 yum install fortune-mod
 yum install tidy
+yum install jq
 #+end_src
 
 ** TODO Figure out mosh ports
