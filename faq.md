@@ -38,7 +38,7 @@ Tilde has a great community culture and we're trying hard to keep it that way. W
 - [Webring](http://tilde.club/~harper/link.html?action=join) 
 - [Skillswap](http://goo.gl/forms/LT2bDgtmwH)
 
-We can't wait to meet you.
+We can't wait to meet you. Seriously.
  
  
          __         .' '.
