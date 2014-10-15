@@ -13,6 +13,13 @@ The default MTA on CentOS is `postfix`. Our goal was to have a `localhost`-only 
 * the `inet_interfaces` value should just be `localhost` (`inet_interfaces = localhost`)
 * the `default_transport` parameter should be the bounce message we want (so add `default_transport = error: outside mail is not deliverable` to the bottom of the file)
 
+### pine
+
+Pine is sort of brain-dead about creating its `.addressbook` file in a user's home directory with `744` permissions; there doesn't appear to be an option to fix this. Instead, it's probably important to work around it before adding any new users:
+
+1. Add `~/mail/` to `/etc/skel` with permissions `700` so that there's a user-accessible-only place for the file to live.
+2. Create an `/etc/pine.conf` file that includes the config directive `address-book=mail/.addressbook` to put that file into this new home.
+
 ## identd
 
 Users will connect from their shell account to an IRC server, so it is *very* handy to have an `identd` server. For us that just meant installing the standard CentOS `identd` server and configuring it to start automatically:
