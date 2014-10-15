@@ -1,4 +1,4 @@
-The tilde.etcskel repository contains the contents of the `/etc/skel/` directory, but since git repositories can't reproduce permissions on the files, here are the current permissions for those contents:
+The [tilde.etcskel repository](https://github.com/tildeclub/tilde.etcskel) contains the contents of the `/etc/skel/` directory, but since git repositories can't reproduce permissions on the files, here are the current permissions for those contents:
 
 ```
 [root@tilde skel]# ls -alR
