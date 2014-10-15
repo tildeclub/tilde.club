@@ -2,6 +2,8 @@
 
 We chose to go with `charybdis`, mostly because it's in the Debian/Ubuntu package repository (universe), so we can update it without having to go through the `configure`/`make`/`make install` process.
 
+> FYI, we've done a bit of testing, and aren't sure that `charybdis` will interconnect server-to-server with `ngircd`, another open-source IRC daemon that's available out there. So if you're setting up a potential IRC peer of the tilde.club IRC server, this might be an important bit of information to know.
+
 ## System setup
 
 The IRC server is an Amazon EC2 instance running Ubuntu. Initial system setup on the IRC server included:
