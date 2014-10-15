@@ -4,7 +4,7 @@ We want to document the ins and outs of setting up the server so others who are 
 
 ## System setup
 
-This part is for @ftrain.
+For now, this is all [documented in a separate server-setup document](https://github.com/tildeclub/tilde.club/blob/master/docs/serversetup.md); ultimately, I presume we'll consolidate it all here.
 
 ## Email
 
