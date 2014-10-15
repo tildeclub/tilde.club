@@ -6,6 +6,10 @@ We want to document the ins and outs of setting up the server so others who are 
 
 For now, this is all [documented in a separate server-setup document](https://github.com/tildeclub/tilde.club/blob/master/docs/server.org); ultimately, I presume we'll consolidate it all here.
 
+## /etc/skel directory
+
+This is the directory that's used as the basis for all newly-created users' home directories, so it's good to get it right before adding new users to a shell server. We've created [a separate repo for the contents of the directory itself](https://github.com/tildeclub/tilde.etcskel), but since it's impossible to check in the appropriate file and directory permissions, [they're documented here](https://github.com/tildeclub/tilde.club/blob/master/docs/etc-skel-permissions.md).
+
 ## Email
 
 The default MTA on CentOS is `postfix`. Our goal was to have a `localhost`-only mail service, which required that we configure `postfix` to listen only to `localhost`, and to bounce any email which local users try to send off-server. Both configuration changes are handled in `/etc/postfix/main.cf`.
