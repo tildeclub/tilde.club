@@ -32,18 +32,6 @@ echo "Removing java"
 yum uninstall java
 #+end_src
 
-Then we fetch the version control management software "git" which
-allows us to load recently updated code from public code
-repositories. And we get nodejs, which provides us with an
-implementation of JavaScript, a programming language that we need to
-run our IRC server.
-
-#+begin_src bash
-yum install git-core
-yum --enablerepo=epel install nodejs
-yum --enablerepo=epel install npm
-#+end_src
-
 * Servers
 Now we install servers, which allow client software to connect and
 issue commands. Each server is like a small computer unto itself.
@@ -61,11 +49,7 @@ echo "2) HTTPD/Apache"
 yum install httpd 
 echo "3) Unix Talk"
 yum install talk-server 
-echo "4) IRCD"
-git clone https://github.com/alexyoung/ircd.js
-cd ircd.js
-# TODO FINISH INSTALL OF IRCD
-echo "5) postfix mail server"
+echo "4) postfix mail server"
 yum install postfix
 #+end_src
 
@@ -75,11 +59,6 @@ yum install postfix
 - [ ] I do not know.
 
 ** TODO Log into webmin and set things up?
-
-** TODO Finish the installation of the IRC server
-
-** TODO Finish the installation of the NNTP server (INN?)
-
 
 * Applications
 #+begin_src bash
@@ -103,6 +82,9 @@ yum install sbcl
 yum install fortune-mod
 yum install tidy
 yum install jq
+yum install git-core
+yum --enablerepo=epel install nodejs
+yum --enablerepo=epel install npm
 #+end_src
 
 ** TODO Figure out mosh ports
