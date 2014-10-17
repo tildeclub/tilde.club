@@ -4,7 +4,8 @@
 This is a literate shell program written. The formatting is pretty
 straightforward. You can have documentation and code mixed up and make
 nice PDFs but also spit out code. It's good for public projects. It
-looks okay on Github. I'll set it up so that it automatically exports a companion shell script in time.
+looks okay on Github. I'll set it up so that it automatically exports
+a companion shell script in time.
 
 Let's set up a tilde.club server!
 
@@ -31,6 +32,43 @@ generally a pretty bad citizen on machines that many people share.
 echo "Removing java"
 yum uninstall java
 #+end_src
+
+* Shells
+#+begin_src bash
+yum install zsh
+yum install csh
+yum-config-manager --add-repo http://fishshell.com/files/linux/RedHat_RHEL-6/fish.release:2.repo
+yum install fish
+
+#+end_src
+
+* Data
+#+begin_src bash
+yum install rrdtool
+yum install jq
+#+end_src
+
+
+* Games
+#+begin_src bash
+yum install frotz
+yum install mlmmj
+#+end_src
+
+I also downloaded and installed nethack. which was a terrible pain and requires much configuration. When we move to Ubuntu it won't be necessary since there's a package so I'm ignoring it for now.
+
+* Editors
+#+begin_src bash
+yum install mg vile zile
+#+end_src
+
+* Usenet
+Slrn is a pain to get working on CentOS.
+
+#+begin_src bash
+yum install slang slang-devel slang-static slang-slsh
+#+end_src
+
 
 * Servers
 Now we install servers, which allow client software to connect and
