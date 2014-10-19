@@ -69,6 +69,17 @@ Slrn is a pain to get working on CentOS.
 yum install slang slang-devel slang-static slang-slsh
 #+end_src
 
+* Languages
+
+#begin_src bash
+yum install R
+chmod 700 /usr/bin/java*
+#end_src bash
+
+R is a huge, shitty install that requires, like LaTeX. And Java. And
+AWS wants Java too. Rather than fight the Java virus I just made it
+700 root.
+
 
 * Servers
 Now we install servers, which allow client software to connect and
