@@ -69,6 +69,13 @@ Slrn is a pain to get working on CentOS.
 yum install slang slang-devel slang-static slang-slsh
 #+end_src
 
+Then download slrn and do a manual install
+
+Same with tin
+
+Download tin and do a manual install
+No special config
+
 * Languages
 
 #begin_src bash
