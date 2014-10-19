@@ -1,4 +1,8 @@
 #+TITLE: Server Configuration
+
+* Pre-preface
+Org-mode is amazing but not great for everyone. I will be migrating these docs into markdown in the future.
+
 * Preface
 
 This is a literate shell program written. The formatting is pretty
@@ -78,10 +82,10 @@ No special config
 
 * Languages
 
-#begin_src bash
+#+begin_src bash
 yum install R
 chmod 700 /usr/bin/java*
-#end_src bash
+#=end_src bash
 
 R is a huge, shitty install that requires, like LaTeX. And Java. And
 AWS wants Java too. Rather than fight the Java virus I just made it
