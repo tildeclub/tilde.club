@@ -1,7 +1,9 @@
 #+TITLE: Server Configuration
 
 * Pre-preface
-Org-mode is amazing but not great for everyone. I will be migrating these docs into markdown in the future.
+
+Org-mode is amazing but not great for everyone. I will be migrating
+these docs into markdown in the future.
 
 * Preface
 
