@@ -16,7 +16,6 @@ We have some capacity and process issues to work out, but they're being actively
 
 [Several alternate sites have sprouted up](http://tilde.club/%7Epfhawkins/othertildes.html) and they have no waiting list. Feel free to join one and we can start working on ways to get everyone connected into one happy hyperlinked network of shared interests.
 
-
 ## How did this accidentally awesome thing get started?
 
 [Paul wrote an explanation on Medium](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf) and you can follow along with his thinking
@@ -31,7 +30,11 @@ Tilde has a great community culture and we're trying hard to keep it that way. W
 
 ## Got it, don't be a jerk. But how do I, like, do things?
 
-[~anthonydpaul's got you covered with the unofficial official tilde primer](http://tilde.club/~anthonydpaul/primer.html).
+Here are some good places to start
+
+- [the unofficial official tilde primer](http://tilde.club/~anthonydpaul/primer.html) and [some quick tips](http://tilde.club/~procload/)
+- [how do I usenet](http://tilde.club/~cortex/usenet_in_pine.txt)?
+- [some lore is here](http://tilde.club/~joeld/tildelore.html).
 
 ## Other links
 - [Github](https://github.com/tildeclub/tilde.club)
