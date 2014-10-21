@@ -31,7 +31,9 @@ Tilde has a great community culture and we're trying hard to keep it that way. W
 
 Here are some good places to start
 
-- [the unofficial official tilde primer](http://tilde.club/~anthonydpaul/primer.html) and [some quick tips](http://tilde.club/~procload/)
+- [the unofficial official tilde primer](http://tilde.club/~anthonydpaul/primer.html)
+- [some quick tips](http://tilde.club/~procload/)
+- [some more quick tips](http://tilde.club/~pfhawkins/tipsntricks.html)
 - [how do I usenet in Alpine](http://tilde.club/~cortex/usenet_in_pine.txt)? 
 - [help me understand 'screen'](http://tilde.club/~jonathan/screen/)
 
