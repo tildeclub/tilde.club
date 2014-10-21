@@ -33,7 +33,7 @@ Here are some good places to start
 
 - [the unofficial official tilde primer](http://tilde.club/~anthonydpaul/primer.html) and [some quick tips](http://tilde.club/~procload/)
 - [how do I usenet in Alpine](http://tilde.club/~cortex/usenet_in_pine.txt)? 
-- [help me understand `screen`] (http://tilde.club/~jonathan/screen/)
+- [help me understand 'screen'](http://tilde.club/~jonathan/screen/)
 
 ## Who are all these folks and what are they up to? 
 
