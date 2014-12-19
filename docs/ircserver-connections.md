@@ -31,3 +31,4 @@ You should have the `/var/log/charybdis/serverinfo` log file enabled, and it's t
 * yester.host: `42y`
 * tilde.red: `42X`
 * tilde.works: `42Z`
+* irc.club6.nl: `6NL`
