@@ -9,3 +9,32 @@ Of course, while the HTML version of the recently-updated list is firmly mid-90s
 Hope these are useful to someone!
 
 Jason Levine, aka [~delfuego](http://tilde.club/~delfuego)
+
+
+# Recently-Updated Page Perl Script
+
+`findmod2.pl` is a pure-Perl5 reimplementation of ~delfuego's scripts.
+It's self-contained, readable, well-documented and will search a
+user's entire `public_html` subtree for the most recent file rather
+than just using the date of the `index.html` file.
+
+It accepts the following command-lines options:
+
+* --domain *name*           -- Domain name for the site.  Guesses if omitted.
+* --root *url*              -- Root URL to use in links.  Derived from domain by default.
+* --since-hours *hours*     -- Number of hours considered recent. Default = 24.
+* --destdir *path*          -- Destination directory for output files.
+* --update-every *seconds*  -- Regenerate the lists every *seconds*.
+* --verbose                 -- Print more information as the program runs.
+* --help                    -- Print a simple help message and exit.
+
+If `--update-every` is given with a positive number, `findmod2.pl`
+will loop forever, waiting the given number of seconds before
+rescanning and regenerating the list.  Otherwise, it will scan once
+and exit.
+
+The output files are named `tilde.XXh.json` and `tilde.XXh.html`,
+where *XX* is replaced by number of hours considered recent (24 or the
+argument given with `--since-hours`).
+
+Chris Reuter, [~suetanvil](http://totallynuclear.club/~suetanvil).
