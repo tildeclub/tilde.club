@@ -9,7 +9,7 @@ tilde.club server.
   - Several hundred people have accounts
   - It was launched at the end of September 2014
 - Tilde.Club is *also* an emerging, mutually supportive community of <del>dozens</del> <del>hundreds</del> thousands of people launching similar servers.
-  - These people enjoy working with in the tool-rich, very social Unix programming environment. 
+  - These people enjoy working in the tool-rich, very social Unix programming environment. 
   - Many of these people want to help new users use these open, free tools to empower themselves. 
     - Even new users who are scared of command-lines. 
     - Especially new users who want to learn but don't like being laughed at. 
