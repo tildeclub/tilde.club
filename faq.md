@@ -47,7 +47,9 @@ Here are some good places to start
 - [Github](https://github.com/tildeclub/tilde.club)
 - [Webring](http://tilde.club/~harper/link.html?action=join) 
 - [Skillswap](http://goo.gl/forms/LT2bDgtmwH)
- 
+- [Unofficial API](http://tilde.club/~danielbachhuber/club-sites.json)
+- [More API](http://tilde.club/~gabriel/who.json)
+
 ## How do you pronounce "tilde"?
 
 Tilde the word is pronounced TIL-duh. Tilde the community is pronounced TIL-dee.
