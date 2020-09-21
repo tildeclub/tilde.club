@@ -70,16 +70,7 @@ A rudimentary `readers.conf` looks like:
 And finally set up the cron job to expire messages. Make sure you add this as
 the `news` user cron:
 
-SHELL=/bin/sh
-MAILTO=root
-#=========================================================================
-# INN crontab:
-#=========================================================================
-#
-# Run news.daily every morning at 6am
-#
 0 6 * * *               /usr/libexec/news/news.daily > dev/null
-
 
 ## Running the server
 
