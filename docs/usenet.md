@@ -16,7 +16,7 @@ Create Linux machine (This is based on Fedora 32)
     # should probably restart the machine to get the new hostname
 
     root $ sudo -u news bash
-    news $ vim etc/inn.conf
+    news $ vim /etc/inn.conf
 
 The top of my `inn.conf` looks like:
         
