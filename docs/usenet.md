@@ -2,73 +2,54 @@
 
 ## Installation
 
-Create Linux machine
+Create Linux machine (This is based on Fedora 32)
 
     $ sudo -i
-    root # yum update
+    root $ dnf update
 
 
-    root # yum install gcc
-    root # yum install cpan
-    root # yum install python-devel
+    root $ dnf install innd
 
-    root # Get the Mime parser (for controlchan [idk wtf that is])
-    root # cpan -f install Mime::Parser
-
-    root # wget ftp://ftp.isc.org/isc/inn/inn-2.5.4.tar.gz
-    root # tar xvf inn-2.5.4.tar.gz
-    root # cd inn-2.5.4
-
-    root # groupadd news
-    root # useradd -g news -d /usr/local/news news
-
-    root # ./configure \
-    --with-python \
-    --enable-libtool \
-    --with-gnu-ld \
-    --with-sendmail=/usr/sbin/sendmail \
-    --enable-tagged-hash \
-    --enable-shared \
-    LIBS="-lpthread"
-
-    root # vim /etc/hostname # set your hostname to something like `news`
-    root # vim /etc/hosts # change local.localdomain to the new hostname
+    root $ vim /etc/hostname # set your hostname to something like `news`
+    root $ vim /etc/hosts # change local.localdomain to the new hostname
 
     # should probably restart the machine to get the new hostname
 
-    root # su - news
+    root $ sudo -u news bash
     news $ vim etc/inn.conf
 
 The top of my `inn.conf` looks like:
+        
+        mta:                         "/usr/sbin/sendmail -oi -oem %s"
+        organization:                "tilde.club"
+        ovmethod:                    tradindexed
+        hismethod:                   hisv6
+        pathhost:                    news.tilde.club
+        pathnews:                    /usr/local/news
 
-    mta:                         "/usr/sbin/sendmail -oi -oem %s"
-    organization:                "tilde.club"
-    ovmethod:                    tradindexed
-    hismethod:                   hisv6
-    pathhost:                    news
-    pathnews:                    /usr/local/news
+        #runasuser:
+        #runasgroup:
 
-    #runasuser:                  # default: news
-    #runasgroup:                 # default: news
+        # General Settings
 
-    # General Settings
-
-    domain:                      news.tilde.club
-    #innflags:
-    mailcmd:                     /usr/local/news/bin/innmail
-    #server:
+        domain:                      news.tilde.club
+        #innflags:
+        mailcmd:                     /usr/libexec/news/innmail
+        server:                      news.tilde.club
+        #syntaxchecks:               [ no-laxmid ]
 
 
 Then you need to configure `readers.conf` to say who can connect, how, and what
 kind of things they get when they log in.
 
-    news $ mv etc/readers.conf etc/readers.conf.old
-    news $ vim etc/readers.conf
+    news $ mv /etc/news/readers.conf /etc/news/readers.conf.old
+    news $ vim /etc/readers.conf
 
 A rudimentary `readers.conf` looks like:
 
-    # as this machine will only listen to connections from the tilde.club server, I don't mind having
+    # Since tilde.club is very open and inviting, I don't mind having
     # such a wild rule.
+    
     auth tilde.club {
             hosts: *
             default: <PUBLIC>
@@ -86,27 +67,73 @@ A rudimentary `readers.conf` looks like:
             perlfilter: false
     }
 
-Ensure that all the history files have the right permissions:
+And finally set up the cron job to expire messages. Make sure you add this as
+the `news` user cron:
 
-    news $ chmod 644 ~/db/*
+SHELL=/bin/sh
+MAILTO=root
+#=========================================================================
+# INN crontab:
+#=========================================================================
+#
+# Run news.daily every morning at 6am
+#
+0 6 * * *               /usr/libexec/news/news.daily > dev/null
 
-And finally set up the cron job to expire messages. Make sure you run this as
-the `news` user:
-
-    0 3 * * * ~/bin/news.daily expireover lowmark
 
 ## Running the server
 
-There are some scripts in the `contrib` which will help you get started, namely
-`sample.init.script`. I think it goes into `/etc/init.d`, though I might be
-mistaken. Another option is a long-running tmux session. Either way, the
-following runs the server:
+This can be accomplished via systemd. 
 
-    news $ bin/rc.news start
+Here is how to enable it to start automatically:
+
+    root $ systemctl enable innd
+
+The following runs the server:
+
+    root $ systemctl start innd
 
 And the following stops it:
 
-    news $ bin/rc.news stop
+    root $ systemctl stop innd
 
-All errors are logged to `~/log/`. `~/log/errlog` is a good resource for finding
+All errors are logged to `/var/log/news`. `/var/log/errlog` is a good resource for finding
 out why your news server isn't running. 
+
+
+
+## Troubleshooting the server
+
+If you know there are articles on the server and for some reason they do not show when you connect with a client, you can rebuild your history and index's.
+
+    root $ systemctl stop innd
+    
+    root $ sudo -u news bash
+        
+    news $ cd /var/lib/news/
+    
+    news $ time /usr/libexec/news/makehistory -b -O -f history.n
+    
+    news $ awk 'NF == 2 { print }' < history >> history.n
+    
+    news $ /usr/libexec/news/makedbz -s `wc -l < history` -f history.n
+    
+    news $ mv  history.n history
+    
+    news $ mv history.n.dir  history.dir
+    
+    news $ mv history.n.hash history.hash
+    
+    news $ mv history.n.index history.index
+    
+    news $ exit
+    
+    root $ systemctl innd start
+    
+    root $ sudo -u news /usr/libexec/news/ctlinnd renumber ''
+        
+    Above guide was copied/modified from: https://lists.isc.org/pipermail/inn-workers/2003-September/012007.html
+    
+    
+    
+    
