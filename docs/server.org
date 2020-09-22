@@ -1,22 +1,16 @@
 #+TITLE: Server Configuration
 
-* Pre-preface
-
-Org-mode is amazing but not great for everyone. I will be migrating
-these docs into markdown in the future.
-
 * Preface
 
 This is a literate shell program written. The formatting is pretty
 straightforward. You can have documentation and code mixed up and make
 nice PDFs but also spit out code. It's good for public projects. It
-looks okay on Github. I'll set it up so that it automatically exports
-a companion shell script in time.
+looks okay on Github. 
 
 Let's set up a tilde.club server!
 
 * Base machine
-- A standard unix server, Ubuntu or CentOS. 
+- A standard unix server, Ubuntu or Fedora or Centos. 
 - [TK explain servers and server math]
 
 * TODO Getting started
@@ -28,7 +22,9 @@ First we automatically upgrade the system
 
 #+begin_src bash
 echo "Installing basics"
-yum upgrade
+dnf update
+dnf upgrade
+reboot
 #+end_src
 
 And we remove Java; it's a beast and it takes a lot of memory and is
@@ -36,63 +32,50 @@ generally a pretty bad citizen on machines that many people share.
 
 #+begin_src bash
 echo "Removing java"
-yum uninstall java
+dnf uninstall java
 #+end_src
 
 * Shells
 #+begin_src bash
-yum install zsh
-yum install csh
-yum-config-manager --add-repo http://fishshell.com/files/linux/RedHat_RHEL-6/fish.release:2.repo
-yum install fish
+dnf install zsh
+dnf install csh
+dnf install fish
 
 #+end_src
 
 * Data
 #+begin_src bash
-yum install rrdtool
-yum install jq
+dnf install rrdtool
+dnf install jq
 #+end_src
 
 
 * Games
 #+begin_src bash
-yum install frotz
-yum install mlmmj
+dnf install frotz
+dnf install mlmmj
 #+end_src
-
-I also downloaded and installed nethack. which was a terrible pain and requires much configuration. When we move to Ubuntu it won't be necessary since there's a package so I'm ignoring it for now.
 
 * Editors
 #+begin_src bash
-yum install mg vile zile
+dnf install mg vile zile nano vim
 #+end_src
 
 * Usenet
-Slrn is a pain to get working on CentOS.
 
 #+begin_src bash
-yum install slang slang-devel slang-static slang-slsh
+dnf install slang slang-devel slang-static slang-slsh
 #+end_src
 
 Then download slrn and do a manual install
+#+begin_src bash
+dnf install slrn
+#+end_src
 
 Same with tin
-
-Download tin and do a manual install
-No special config
-
-* Languages
-
 #+begin_src bash
-yum install R
-chmod 700 /usr/bin/java*
-#=end_src bash
-
-R is a huge, shitty install that requires, like LaTeX. And Java. And
-AWS wants Java too. Rather than fight the Java virus I just made it
-700 root.
-
+dnf install tin
+#+end_src
 
 * Servers
 Now we install servers, which allow client software to connect and
@@ -103,59 +86,50 @@ tool that you can use from the web.
 
 #+begin_src bash
 echo "Installing servers"
-echo "1) Webmin"
-yum install perl-Net-SSLeay # (so that webmin uses HTTPS rather than HTTP)
-wget http://prdownloads.sourceforge.net/webadmin/webmin-1.710-1.noarch.rpm
-rpm -U webmin-1.710-1.noarch.rpm
-echo "2) HTTPD/Apache"
-yum install httpd 
+echo "2) nginx"
+dnf install nginx
 echo "3) Unix Talk"
-yum install talk-server 
+dnf install talk-server 
 echo "4) postfix mail server"
-yum install postfix
+dnf install postfix
 #+end_src
-
-** TODO Is postfix even necessary?
-
-- [ ] We could just do maildrop.
-- [ ] I do not know.
-
-** TODO Log into webmin and set things up?
+echo "5) dovecot IMAP server"
+dnf install dovecot
+#+end_src
 
 * Applications
 #+begin_src bash
-yum install emacs
-yum install tmux
-yum install htop
-yum install elinks 
-yum install nail # [?why did I did this]
-yum install lynx
-yum install figlet
-yum install ImageMagick
-yum --enablerepo=epel install -y mosh
-# Irc clients
-yum install ScrollZ
-yum install irssi
-yum install alpine
-yum install pico
-yum install readline
-yum install tig
-yum install sbcl
-yum install fortune-mod
-yum install tidy
-yum install jq
-yum install git-core
-yum --enablerepo=epel install nodejs
-yum --enablerepo=epel install npm
-#+end_src
+dnf install emacs
+dnf install tmux
+dnf install htop
+dnf install elinks 
+dnf install nail # [?why did I did this]
+dnf install lynx
+dnf install links
+dnf install figlet
+dnf install ImageMagick
+dnf --enablerepo=epel install -y mosh
 
-** TODO Figure out mosh ports
-** TODO Decided if we want mailman for internal private mailing lists. Probably so!
+# Irc clients
+dnf install ScrollZ
+dnf install irssi
+dnf install alpine
+dnf install pico
+dnf install readline
+dnf install tig
+dnf install sbcl
+dnf install fortune-mod
+dnf install tidy
+dnf install jq
+dnf install git-core
+dnf --enablerepo=epel install nodejs
+dnf --enablerepo=epel install npm
+#+end_src
 
 * Development Tools
 #+begin_src bash
-yum groupinstall "Development Tools"
-yum install gcc
+dnf groupinstall "Development Tools"
+dnf install gcc
 chmod 700 /usr/bin/gcc*
 chmod 700 /usr/bin/cc*
 #+end_src
