@@ -92,7 +92,6 @@ echo "3) Unix Talk"
 dnf install talk-server 
 echo "4) postfix mail server"
 dnf install postfix
-#+end_src
 echo "5) dovecot IMAP server"
 dnf install dovecot
 #+end_src
