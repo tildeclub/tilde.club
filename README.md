@@ -6,7 +6,7 @@ tilde.club server.
 
 # What is tilde.club?
 - [https://tilde.club](https://tilde.club) is one unmodified unix server on the Internet
-  - Several hundred people have accounts
+  - Several thousand people have accounts
   - It was launched at the end of September 2014
 - Tilde.Club is *also* an emerging, mutually supportive community of <del>dozens</del> <del>hundreds</del> thousands of people launching similar servers.
   - These people enjoy working in the tool-rich, very social Unix programming environment. 
