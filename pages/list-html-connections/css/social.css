@@ -1,0 +1,10 @@
+h1 {font-weight:normal;}
+body {margin:5em;background:white;}
+table {border-collapse:collapse;}
+a {text-decoration:none;}
+td {vertical-align:top;margin:.5px;border-bottom:1px solid #ccc;font-family:Trebuchet MS; font-size:9pt;
+padding:1em;
+line-height:149%;
+}
+td.user {font-weight:bold; text-align:right;}
+td.linkedby {width:100px;color:#888;text-align:center;}
