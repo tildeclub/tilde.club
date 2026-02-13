@@ -21,6 +21,17 @@ tilde.club server.
 
 It's all moving very fast.
 
+# Getting started: run a tilde and help users build on it
+
+If your goal is to launch your own tilde-style host (or improve an existing one), start here:
+
+- [Build your own tilde-style server](docs/how-to-set-up-a-tilde.md)
+- [Shell server setup notes](docs/shellserver.md)
+- [SSH key onboarding guide](docs/ssh.md)
+- [Current `/etc/skel` permissions reference](docs/etc-skel-permissions.md)
+
+These documents are focused on practical operations, onboarding, and adding community functionality in safe increments.
+
 # Help Wanted
 Tilde.club is moving very quickly and is 100% volunteer led.
 

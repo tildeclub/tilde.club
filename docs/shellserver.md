@@ -4,7 +4,19 @@ We want to document the ins and outs of setting up the server so others who are 
 
 ## System setup
 
-For now, this is all [documented in a separate server-setup document](https://github.com/tildeclub/tilde.club/blob/master/docs/server.org); ultimately, I presume we'll consolidate it all here.
+Start with [Build your own tilde-style server](./how-to-set-up-a-tilde.md) for a modern baseline. Historical package notes still live in [docs/server.org](./server.org).
+
+
+## Quick priorities for new operators
+
+If you are bringing up a new host, focus on these first:
+
+1. Lock down SSH and require keys.
+2. Get `/etc/skel` right before creating many users.
+3. Verify `~/public_html` publishing works.
+4. Document onboarding, moderation, and backup/restore workflows.
+
+These four steps prevent many common early-stage tilde problems.
 
 ## /etc/skel directory
 
