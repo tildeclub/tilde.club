@@ -29,6 +29,7 @@ If your goal is to launch your own tilde-style host (or improve an existing one)
 - [Shell server setup notes](docs/shellserver.md)
 - [SSH key onboarding guide](docs/ssh.md)
 - [Current `/etc/skel` permissions reference](docs/etc-skel-permissions.md)
+- [User and session accounting quick reference](docs/accounting.md)
 
 These documents are focused on practical operations, onboarding, and adding community functionality in safe increments.
 
