@@ -1,137 +1,23 @@
-#+TITLE: Server Configuration
+#+TITLE: Server setup reference
 
-* Preface
+* Where the current guide lives
 
-This is a literate shell program written. The formatting is pretty
-straightforward. You can have documentation and code mixed up and make
-nice PDFs but also spit out code. It's good for public projects. It
-looks okay on Github. 
+Use [[file:how-to-set-up-a-tilde.md][Build a tilde-style machine]] for installation and
+[[file:current-system.md][Current system]] for the recorded tilde.club configuration.
+This file remains at its old path so links to it still lead somewhere useful.
 
-Let's set up a tilde.club server!
+The old package list mixed Fedora, CentOS and Ubuntu instructions, init scripts,
+and manual builds. It was not a reproducible description of the current host.
+It has been replaced by a Fedora/nginx guide and separate service chapters.
 
-* Base machine
-- A standard unix server, Ubuntu or Fedora or Centos. 
-- [TK explain servers and server math]
+* Related instructions
 
-* TODO Getting started
-- [ ] Add apropos descriptions for each application?
+- [[file:ssh.md][SSH and MFA]]
+- [[file:etc-skel-permissions.md][Home skeleton and permissions]]
+- [[file:accounts.md][Account provisioning and first login]]
+- [[file:web.md][Web publishing]]
+- [[file:mail.md][Mail]]
+- [[file:backups.md][Backups and recovery]]
+- [[file:sources.md][Upstream documentation and source repositories]]
 
-We need to start by installing some basics.
-
-First we automatically upgrade the system
-
-#+begin_src bash
-echo "Installing basics"
-dnf update
-dnf upgrade
-reboot
-#+end_src
-
-And we remove Java; it's a beast and it takes a lot of memory and is
-generally a pretty bad citizen on machines that many people share.
-
-#+begin_src bash
-echo "Removing java"
-dnf uninstall java
-#+end_src
-
-* Shells
-#+begin_src bash
-dnf install zsh
-dnf install csh
-dnf install fish
-
-#+end_src
-
-* Data
-#+begin_src bash
-dnf install rrdtool
-dnf install jq
-#+end_src
-
-
-* Games
-#+begin_src bash
-dnf install frotz
-dnf install mlmmj
-#+end_src
-
-* Editors
-#+begin_src bash
-dnf install mg vile zile nano vim
-#+end_src
-
-* Usenet
-
-#+begin_src bash
-dnf install slang slang-devel slang-static slang-slsh
-#+end_src
-
-Then download slrn and do a manual install
-#+begin_src bash
-dnf install slrn
-#+end_src
-
-Same with tin
-#+begin_src bash
-dnf install tin
-#+end_src
-
-* Servers
-Now we install servers, which allow client software to connect and
-issue commands. Each server is like a small computer unto itself.
-
-The first server we fetch is Webmin, which is a systems administration
-tool that you can use from the web.
-
-#+begin_src bash
-echo "Installing servers"
-echo "2) nginx"
-dnf install nginx
-echo "3) Unix Talk"
-dnf install talk-server 
-echo "4) postfix mail server"
-dnf install postfix
-echo "5) dovecot IMAP server"
-dnf install dovecot
-#+end_src
-
-* Applications
-#+begin_src bash
-dnf install emacs
-dnf install tmux
-dnf install htop
-dnf install elinks 
-dnf install nail # [?why did I did this]
-dnf install lynx
-dnf install links
-dnf install figlet
-dnf install ImageMagick
-dnf --enablerepo=epel install -y mosh
-
-# Irc clients
-dnf install ScrollZ
-dnf install irssi
-dnf install alpine
-dnf install pico
-dnf install readline
-dnf install tig
-dnf install sbcl
-dnf install fortune-mod
-dnf install tidy
-dnf install jq
-dnf install git-core
-dnf --enablerepo=epel install nodejs
-dnf --enablerepo=epel install npm
-#+end_src
-
-* Development Tools
-#+begin_src bash
-dnf groupinstall "Development Tools"
-dnf install gcc
-chmod 700 /usr/bin/gcc*
-chmod 700 /usr/bin/cc*
-#+end_src
-
-* Add other things
-- Get the right racket for the box at http://racket-lang.org/download/
+No blocks in this file need to be tangled or run as a setup program.

@@ -1,575 +1,271 @@
-## Build your own tilde-style server (beginner-friendly, step-by-step)
+# Build a tilde-style machine
 
-This guide is intentionally detailed for first-time operators.
+A tilde is a shared Unix machine where people get a shell account and space to
+publish things. The machine needs an operator, a backup, and some clear rules.
+It does not need every service on the existing tilde.club host on the first day.
 
-If you have never run a server before, follow this in order and do not skip ahead.
+This guide uses Fedora Server and nginx. The production reference was collected
+from tilde.club on October 22, 2026, running Fedora 43. Use a supported release
+and its maintained packages. See [the system record](current-system.md) for
+what was actually observed; examples below use `tilde.example.net` and a test
+account named `member`.
 
----
+The commands in this guide are Bash. If your interactive shell is Fish, start
+`bash` before using examples that assign variables or use Bash loops. Run
+administrative commands from a root shell obtained with `sudo -i`, unless the
+text says to run them on your own computer or as a regular user.
 
-## What you are building
+## 1. Plan the machine
 
-A "tilde-style" host usually provides:
+For a small initial group, 2 CPUs, 4 GiB RAM, and 60 GiB of SSD storage are a
+reasonable starting allocation. Compilers, persistent bots, mail, and games can
+change that quickly. Monitor actual use before increasing limits or buying more
+capacity. The existing server's size is not a minimum requirement.
 
-- A Linux shell account for each user
-- Personal web publishing from `~/public_html`
-- Shared Unix tools for learning, writing, coding, and socializing
-- Community norms and moderation
+You need:
 
-In short: a small, friendly, multi-user Unix community.
+- A domain you control and a host with a stable public address.
+- Provider console or recovery access independent of SSH.
+- An off-host backup destination and a place to keep recovery keys.
+- An admin account, a second person or recovery process for emergencies, and a
+  published way to contact the operators.
+- A decision about signups, acceptable use, account removal, and disk limits.
 
----
+Use separate service accounts for the web server, mail, Gopher, and other
+services. Ordinary shell accounts do not belong in `wheel` or a container-engine
+administration group. Shell access lets people run programs: PHP restrictions
+and a blocked SSH forwarding option do not turn a shell account into a sandbox.
 
-## 0) Before you touch a server
+## 2. Install and update Fedora
 
-### 0.1 Buy or prepare these things first
-
-1. A domain name (example: `domain.club`)
-2. One Linux server (VPS is fine)
-3. SSH client on your laptop
-4. A text editor you can use comfortably
-
-### 0.2 Keep this safety rule in mind
-
-Never close your current SSH session until you have confirmed a **new** SSH session works with your latest config changes.
-
-This one habit prevents most accidental lockouts.
-
----
-
-## 1) Provision your Linux server
-
-You can use AWS, Hetzner, Linode, DigitalOcean, or any other provider.
-
-### Recommended minimum for a small starter community
-
-- 2 vCPU
-- 4 GB RAM
-- 40 GB SSD
-- Ubuntu LTS or Debian stable (easiest for beginners)
-
-### 1.1 Point DNS at your server
-
-At your DNS provider:
-
-- Create an `A` record for `domain.club` -> your server IPv4
-- Optionally create `AAAA` for IPv6
-
-DNS can take time to propagate.
-
-### 1.2 First login
-
-From your local machine:
+Install Fedora Server with SSH access and time synchronization enabled. Keep
+SELinux enforcing on a new installation. The production host currently has it
+disabled; that is not a prerequisite for running a tilde.
 
 ```bash
-ssh root@domain.club
+dnf upgrade --refresh
+dnf install sudo openssh-server git curl rsync tmux vim-enhanced nano jq \
+    acl ripgrep policycoreutils-python-utils firewalld chrony
+hostnamectl set-hostname tilde.example.net
+systemctl enable --now sshd chronyd
 ```
 
-If your provider uses a default admin user (for example `ubuntu`), use that user and `sudo`.
+Reboot if the update requires it and verify a fresh login. Record the OS version
+and package sources. Do not add random repositories to recover an old program
+name from a 2014 package list.
 
----
+## 3. Set DNS and the firewall
 
-## 2) Base system setup (packages, hostname, firewall)
+Create an A record for `tilde.example.net`. Add an AAAA record only if IPv6 works
+through the host and provider firewalls. Test both address families from outside
+the server. Reverse DNS is especially important if you plan to send mail directly.
 
-This section includes both Debian/Ubuntu and Red Hat-family commands.
-
-### 2.1 Update the system
-
-**Debian / Ubuntu**
+On a new host using firewalld, first check which zone owns the network interface:
 
 ```bash
-apt update
-apt -y upgrade
+firewall-cmd --get-active-zones
 ```
 
-**RHEL / Rocky / Alma / Fedora**
+In the example below, replace `public` with that zone. Confirm any custom SSH
+port is allowed before changing a firewall remotely.
 
 ```bash
-dnf -y upgrade
-```
-
-### 2.2 Install baseline tools
-
-**Debian / Ubuntu**
-
-```bash
-apt -y install sudo git curl wget rsync tmux htop vim nano tree jq ufw
-```
-
-**RHEL / Rocky / Alma / Fedora**
-
-```bash
-dnf -y install sudo git curl wget rsync tmux htop vim nano tree jq
-```
-
-### 2.3 Set hostname
-
-```bash
-hostnamectl set-hostname domain.club
-```
-
-Check:
-
-```bash
-hostnamectl
-```
-
-### 2.4 Configure a basic firewall
-
-If using `ufw` (common on Ubuntu):
-
-```bash
-ufw default deny incoming
-ufw default allow outgoing
-ufw allow 22/tcp
-ufw allow 80/tcp
-ufw allow 443/tcp
-ufw enable
-ufw status verbose
-```
-
-If using `firewalld` (common on RHEL-family):
-
-```bash
-systemctl enable --now firewalld
-firewall-cmd --permanent --add-service=ssh
-firewall-cmd --permanent --add-service=http
-firewall-cmd --permanent --add-service=https
+systemctl enable firewalld
+firewall-cmd --permanent --zone=public --add-service=ssh
+firewall-cmd --permanent --zone=public --add-service=http
+firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --reload
-firewall-cmd --list-services
+firewall-cmd --zone=public --list-all
 ```
 
----
+These commands assume firewalld is already running. If it is stopped, prepare
+the persistent zone with `firewall-offline-cmd` before starting it, including
+your actual SSH port and the intended network-zone assignment. Then start it
+and verify a new connection. Provider firewalls are independent.
 
-## 3) Create a non-root admin account
+The existing tilde.club host uses CSF. Do not enable a second firewall manager
+on that machine as part of following this guide. See [ports and firewall
+policy](shellserver.md#ports-and-firewall-policy) before adding optional services.
 
-Running daily admin tasks as `root` is risky.
+## 4. Establish an admin account
 
-### 3.1 Create admin user
+Create a private primary group and home. Set a password for sudo, then add the
+account to `wheel`:
 
 ```bash
-adduser admin
+useradd --create-home --user-group --shell /bin/bash operator
+passwd operator
+usermod --append --groups wheel operator
+install -d -o operator -g operator -m 0700 /home/operator/.ssh
 ```
 
-On some distros:
+Copy the admin's **public** key to `/home/operator/.ssh/authorized_keys`, without
+replacing an existing key file. Set its owner to `operator:operator` and mode
+0600, and run `restorecon -RF /home/operator/.ssh` if SELinux is enabled.
+
+From a second terminal on your own computer, verify key login and `sudo -v`.
+Keep the first connection open. Do not disable the only working login method
+before its replacement has been tested.
+
+Follow [SSH access and MFA](ssh.md) to make the key-only baseline explicit.
+That chapter also covers enrollment before enforcing MFA and a separate legacy
+SSH service. Do not copy the production host's account-specific exceptions.
+
+## 5. Build the home skeleton
+
+Follow [the skeleton instructions](etc-skel-permissions.md). At a minimum, create
+an empty private SSH directory, a public HTML directory, and a useful starter
+page. Do this before creating the test account.
+
+The public [tilde.etcskel repository](https://github.com/tildeclub/tilde.etcskel)
+is a reference to review, not a directory to copy over your live `/etc/skel`
+without checking it. It contains host-specific defaults and first-login hooks.
+
+## 6. Install the web service
 
 ```bash
-useradd -m -s /bin/bash admin
-passwd admin
+dnf install nginx
+install -d -o root -g root -m 0755 /usr/share/nginx/html
 ```
 
-### 3.2 Give sudo privileges
+Use [web publishing](web.md) and the
+[static nginx example](../examples/nginx/tilde-static.conf). Start with static
+pages. That makes it possible to test path mapping and private-file access
+before adding PHP or CGI.
 
-**Debian / Ubuntu**
+The example belongs in `/etc/nginx/conf.d/tilde.conf`, which Fedora's normal
+nginx configuration includes inside `http`. Check that include on your machine.
+Remove or adjust a conflicting packaged default server block; do not keep two
+servers both claiming to be the default on the same address and port.
+
+Replace the example domain, then validate and start the service:
 
 ```bash
-usermod -aG sudo admin
+nginx -t
+systemctl enable --now nginx
 ```
 
-**RHEL-family**
+The example is HTTP-only so it can be used before obtaining a certificate. Set
+up TLS before accepting account passwords or enabling web applications.
+
+## 7. Create one test member
+
+The following is the independent Unix-account baseline. It does not announce an
+account, send welcome mail, create ZNC accounts, or update the production signup
+queue. Those are integrations described in [accounts](accounts.md).
 
 ```bash
-usermod -aG wheel admin
+useradd --create-home --user-group --shell /bin/bash member
+passwd member
+chmod 0711 /home/member
+install -d -o member -g member -m 0700 /home/member/.ssh
+install -d -o member -g member -m 0755 /home/member/public_html
 ```
 
-### 3.3 Test sudo
+`useradd` should copy the empty key file from the prepared skeleton. Put the
+member's public key there, then set its owner to `member:member` and mode 0600.
+Never put private keys in the skeleton or generate a private key for a member
+and email it to them.
+
+Keep the home at 0711 for this layout. That permits traversal to public content
+without allowing a directory listing of the home. Private directories and files
+still need their own modes: use 0700 for private directories and 0600 for private
+files. A 0711 home alone does not hide a readable file at a known path.
+
+With SELinux enabled, apply and test the publishing policy described in the web
+chapter, then restore the account's labels. Do not recursively make a home
+world-readable just to fix a 403 response.
+
+From your own computer, test SSH, an unrelated key that should fail, and:
 
 ```bash
-su - admin
-sudo whoami
+curl --fail http://tilde.example.net/~member/
+curl --fail http://tilde.example.net/u/member/
 ```
 
-Expected output: `root`
+Create a second disposable member and run the cross-account checks in the web
+chapter before enabling executable user content.
 
----
+## 8. Add TLS
 
-## 4) SSH hardening (safe order, no lockouts)
-
-Do this carefully.
-
-### 4.1 Set up admin SSH key directory and file
+The static example exposes ACME challenges beneath `/var/lib/letsencrypt`.
+Create that directory and install the packaged Certbot client:
 
 ```bash
-install -d -m 700 /home/admin/.ssh
-install -m 600 /dev/null /home/admin/.ssh/authorized_keys
-chown -R admin:admin /home/admin/.ssh
+dnf install certbot
+install -d -o root -g root -m 0755 /var/lib/letsencrypt/.well-known/acme-challenge
+certbot certonly --webroot -w /var/lib/letsencrypt -d tilde.example.net
 ```
 
-### 4.2 Add your public key
+Verify that the returned certificate paths exist. Add the HTTPS server block
+from the web chapter, run `nginx -t`, and reload nginx. Install a deploy hook to
+validate and reload nginx when a renewed certificate is deployed. If the same
+certificate is used by mail, reload those consumers as well. Confirm the
+packaged renewal timer is enabled and perform `certbot renew --dry-run`.
 
-On your local machine, show your public key:
+This webroot setup can renew without stopping nginx. The existing server uses
+a separate standalone renewal service that stops and starts nginx; its details
+are recorded in the web chapter rather than imposed on a new host.
+
+## 9. Give people useful tools
+
+Install a small set first; expand it in response to actual requests:
 
 ```bash
-cat ~/.ssh/id_ed25519.pub
+dnf install fish zsh emacs irssi weechat alpine lynx links \
+    git gcc make python3 ruby perl figlet
 ```
 
-Copy that line and paste it into:
-
-`/home/admin/.ssh/authorized_keys`
-
-Example on server:
-
-```bash
-printf '%s\n' 'ssh-ed25519 AAAA... your-key-comment' >> /home/admin/.ssh/authorized_keys
-chown admin:admin /home/admin/.ssh/authorized_keys
-chmod 600 /home/admin/.ssh/authorized_keys
-```
-
-### 4.3 Keep passwords ON while you test keys
-
-Edit `/etc/ssh/sshd_config`:
-
-```text
-PermitRootLogin no
-PubkeyAuthentication yes
-PasswordAuthentication yes
-ChallengeResponseAuthentication no
-UsePAM yes
-```
-
-Reload:
-
-```bash
-systemctl reload sshd
-```
-
-From a **second local terminal**, test login:
-
-```bash
-ssh admin@domain.club
-```
-
-If this fails, fix it now. Do **not** continue.
-
-### 4.4 Disable password auth only after key login works
-
-Edit `/etc/ssh/sshd_config`:
-
-```text
-PasswordAuthentication no
-```
-
-Reload and test again from a second terminal:
-
-```bash
-systemctl reload sshd
-ssh admin@domain.club
-```
-
-Only after success should you end your old session.
-
----
-
-## 5) Install and configure Apache for user pages
-
-This is the baseline many tilde hosts use for `~username` pages.
-
-### 5.1 Install Apache
-
-**Debian / Ubuntu**
-
-```bash
-apt -y install apache2
-systemctl enable --now apache2
-```
-
-**RHEL-family**
-
-```bash
-dnf -y install httpd
-systemctl enable --now httpd
-```
-
-Check service status:
-
-```bash
-systemctl status apache2 --no-pager
-# or
-systemctl status httpd --no-pager
-```
-
-### 5.2 Enable user directories (`~username` URLs)
-
-#### Debian / Ubuntu
-
-```bash
-a2enmod userdir
-systemctl restart apache2
-```
-
-By default, this serves `/home/USERNAME/public_html` as:
-
-`http://domain.club/~USERNAME/`
-
-#### RHEL-family
-
-Edit Apache config (often `/etc/httpd/conf/httpd.conf`) and ensure:
-
-```apache
-UserDir public_html
-
-<Directory /home/*/public_html>
-    AllowOverride All
-    Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
-    Require method GET POST OPTIONS
-</Directory>
-```
-
-Then restart:
-
-```bash
-systemctl restart httpd
-```
-
-### 5.3 Create a test web user and page
-
-```bash
-useradd -m -s /bin/bash testuser
-mkdir -p /home/testuser/public_html
-cat > /home/testuser/public_html/index.html <<'HTML'
-<!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>testuser page</title></head>
-  <body><h1>hello from testuser</h1></body>
-</html>
-HTML
-chown -R testuser:testuser /home/testuser
-chmod 755 /home/testuser
-chmod 755 /home/testuser/public_html
-chmod 644 /home/testuser/public_html/index.html
-```
-
-Now test locally on the server:
-
-```bash
-curl -I http://localhost/~testuser/
-curl http://localhost/~testuser/
-```
-
-Then test from your laptop:
-
-```bash
-curl -I http://domain.club/~testuser/
-```
-
-If it fails, check Apache logs:
-
-**Debian / Ubuntu**
-
-```bash
-tail -n 100 /var/log/apache2/error.log
-```
-
-**RHEL-family**
-
-```bash
-tail -n 100 /var/log/httpd/error_log
-```
-
----
-
-## 6) Prepare `/etc/skel` before inviting users
-
-`/etc/skel` is copied into every new account. Set it up early.
-
-### 6.1 Minimum recommended contents
-
-- `.bashrc` and/or `.zshrc` with helpful comments
-- `public_html/index.html` starter page
-- A README with first commands and local rules
-- Optional `public_gemini/` and `public_gopher/`
-
-### 6.2 Example starter files
-
-```bash
-install -d -m 755 /etc/skel/public_html
-cat > /etc/skel/public_html/index.html <<'HTML'
-<!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>Welcome</title></head>
-  <body>
-    <h1>It works!</h1>
-    <p>Edit this file to publish your page.</p>
-  </body>
-</html>
-HTML
-```
-
-```bash
-cat > /etc/skel/README-FIRST.txt <<'TXT'
-Welcome to the server.
-
-Useful first commands:
-- pwd
-- ls -la
-- nano ~/public_html/index.html
-
-Your web page lives at:
-http://domain.club/~YOURUSERNAME/
-TXT
-```
-
-See also: `docs/etc-skel-permissions.md`.
-
----
-
-## 7) Install baseline user tools
-
-Give new users a capable, friendly default toolbox.
-
-**Debian / Ubuntu**
-
-```bash
-apt -y install \
-  zsh fish \
-  emacs vim nano \
-  irssi weechat \
-  mutt alpine \
-  lynx w3m links \
-  git build-essential python3 nodejs npm
-```
-
-**RHEL-family**
-
-```bash
-dnf -y install \
-  zsh fish \
-  emacs vim nano \
-  irssi weechat \
-  mutt alpine \
-  lynx links \
-  git gcc make python3 nodejs npm
-```
-
-Add or remove packages based on your community.
-
----
-
-## 8) Add users safely and consistently
-
-Use a repeatable checklist every time.
-
-### 8.1 Account creation checklist
-
-```bash
-useradd -m -s /bin/bash USERNAME
-passwd -l USERNAME
-install -d -m 700 /home/USERNAME/.ssh
-install -m 600 /dev/null /home/USERNAME/.ssh/authorized_keys
-install -d -m 755 /home/USERNAME/public_html
-chown -R USERNAME:USERNAME /home/USERNAME
-```
-
-### 8.2 Add the user's public key
-
-```bash
-printf '%s\n' 'ssh-ed25519 AAAA... user@device' >> /home/USERNAME/.ssh/authorized_keys
-chown USERNAME:USERNAME /home/USERNAME/.ssh/authorized_keys
-chmod 600 /home/USERNAME/.ssh/authorized_keys
-```
-
-### 8.3 Verify login and web publishing
-
-```bash
-ssh USERNAME@domain.club
-curl -I http://domain.club/~USERNAME/
-```
-
----
-
-## 9) Add "tilde functionality" in manageable layers
-
-Do not launch everything on day one.
-
-### Layer A: personal publishing
-
-- User web pages in `public_html`
-- Basic HTML templates
-- Optional Gemini and Gopher directories
-
-### Layer B: communication
-
-- IRC client docs
-- Local mail (postfix + local delivery)
-- Server bulletin/MOTD updates
-
-### Layer C: collaboration
-
-- Shared Git repos
-- Local pastebin/snippet service
-- Community docs/wiki process
-
-### Layer D: culture and learning
-
-- New-user orientation checklist
-- Mentoring or office-hours in chat
-- Monthly "show your tilde" events
-
----
-
-## 10) Operations, backup, and recovery
-
-### 10.1 Back up the important data
-
-At minimum, back up:
-
-- `/home`
-- `/etc`
-- Web server config (`/etc/apache2` or `/etc/httpd`)
-- Mail config if used
-
-### 10.2 Example nightly backup script
-
-Create `/usr/local/sbin/backup-tilde.sh`:
-
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
-
-DEST=/var/backups/tilde
-DATE=$(date +%F)
-mkdir -p "$DEST/$DATE"
-
-tar -czf "$DEST/$DATE/home.tgz" /home
-tar -czf "$DEST/$DATE/etc.tgz" /etc
-```
-
-Make executable:
-
-```bash
-chmod 700 /usr/local/sbin/backup-tilde.sh
-```
-
-Run once manually:
-
-```bash
-/usr/local/sbin/backup-tilde.sh
-```
-
-Then automate with cron or systemd timers.
-
-### 10.3 Test restore (critical)
-
-A backup is not real until you test restoring at least one file.
-
----
-
-## 11) First-week launch checklist
-
-- [ ] DNS points to server
-- [ ] Firewall allows only intended ports
-- [ ] Admin key login works from a second terminal
-- [ ] Password auth disabled only after key validation
-- [ ] Apache running and `~testuser` page reachable
-- [ ] `/etc/skel` tested by creating a new account
-- [ ] Backup job ran and one restore test passed
-- [ ] Rules/moderation/contact info published
-- [ ] At least one backup admin has emergency access
-
----
-
-## 12) Where to continue in this repository
-
-- `docs/shellserver.md` for shell host operational notes
-- `docs/etc-skel-permissions.md` for current skeleton permissions
-- `docs/ssh.md` for SSH key onboarding details
-- `docs/server.org` for historical package/setup notes
+Use `dnf info NAME` before adding optional packages. Packages, module streams,
+and third-party builds change. Keep a record of manual installations and their
+update procedure. Do not chmod system compilers to root-only as a substitute
+for resource management; programming is part of the point of the machine.
+
+Choose the shells you support in `/etc/shells`, and make sure each has working
+startup files. Add [first-login setup](accounts.md#first-login-wizard) only after
+its dependencies and exit behavior have been tested with those shells.
+
+## 10. Set quotas and resource limits
+
+Use [the shell operations chapter](shellserver.md). For XFS, discover the mount
+containing `/home` before running quota commands. On the collected machine that
+mount is `/`, not `/home`.
+
+A disk quota does not limit CPU or processes. Set and verify those policies
+separately, with enough room for normal compiles, editors, mail, and chat clients.
+
+## 11. Back up and restore before opening signups
+
+Follow [backup and recovery](backups.md). Include account data, mail, service
+configs, local programs, web applications, and consistent database dumps. Keep
+the repository and its recovery keys off the host. Restore a test account into
+an isolated directory and verify the result.
+
+A successful backup job alone is not a completed restore test.
+
+## 12. Add the services you intend to operate
+
+- [Mail](mail.md): local delivery, IMAP, submission, DNS, filtering, and abuse checks.
+- [IRC](ircserver.md): clients, persistent sessions, ident, ZNC, and optional network hosting.
+- [Gopher and Gemini](publishing.md): separate public directories and service users.
+- [Usenet](usenet.md): local groups before opening reader access or negotiating peers.
+- [Website and community tools](community.md): signup handling, the wiki, and optional apps.
+
+Each service adds an update job, a backup requirement, and a support obligation.
+Write down who owns it and how to stop or restore it.
+
+## Before accepting members
+
+- Test admin and member login from outside the host, including IPv6 if published.
+- Verify MFA enrollment, account recovery, and any allowed automation accounts.
+- Test static publishing, private-file denial, and executable content separately.
+- Confirm disk quotas and process/memory limits with the test accounts.
+- Complete an off-host backup and isolated restore.
+- Publish rules, a contact address, maintenance notices, and an account-removal policy.
+- Review every enabled network listener against the intended firewall policy.
+- Remove diagnostic PHP pages, temporary archives, and test credentials from web roots.
+
+Keep your local configuration changes under version control without secrets.
+Record the version or commit used for every manually installed service. The
+[upstream references](sources.md) explain the software-specific behavior behind
+these examples.

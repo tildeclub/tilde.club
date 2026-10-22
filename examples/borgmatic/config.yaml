@@ -1,0 +1,22 @@
+# NEW-HOST example: borgmatic 2.x and Borg 1.x. See docs/backups.md.
+source_directories:
+    - /home
+    - /etc
+    - /usr/local
+    - /usr/share/nginx
+    - /srv
+    - /var/backups/tilde-databases
+source_directories_must_exist: true
+repositories:
+    - path: ssh://backup@backup.example.net/./tilde
+      label: offsite
+encryption_passcommand: cat /root/.config/borg/passphrase
+compression: zstd,3
+keep_daily: 7
+keep_weekly: 4
+keep_monthly: 6
+checks:
+    - name: repository
+      frequency: 1 week
+    - name: archives
+      frequency: 1 month

@@ -1,0 +1,14 @@
+# New-host example using the published gemserv interface/[[server]] schema.
+# Confirm compatibility with your reviewed source revision before deployment.
+interface = ["[::]:1965"]
+log = "info"
+
+[[server]]
+hostname = "tilde.example.net"
+dir = "/srv/gemini/content"
+cert = "/etc/gemserv/cert.pem"
+key = "/etc/gemserv/key.pem"
+index = "index.gmi"
+lang = "en"
+usrdir = true
+cgi = false

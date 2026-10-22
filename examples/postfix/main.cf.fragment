@@ -1,0 +1,20 @@
+# New-host fragment. Merge into main.cf; retain distro defaults not shown here.
+myhostname = tilde.example.net
+mydomain = tilde.example.net
+myorigin = $mydomain
+mydestination = $myhostname, localhost.$mydomain, localhost
+inet_interfaces = all
+inet_protocols = all
+mynetworks = 127.0.0.0/8 [::1]/128
+relayhost =
+home_mailbox = .mail/
+mailbox_transport = lmtp:unix:private/dovecot-lmtp
+smtpd_relay_restrictions = permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_auth_enable = no
+smtpd_tls_auth_only = yes
+smtpd_tls_security_level = may
+smtp_tls_security_level = may
+smtpd_tls_cert_file = /etc/letsencrypt/live/tilde.example.net/fullchain.pem
+smtpd_tls_key_file = /etc/letsencrypt/live/tilde.example.net/privkey.pem

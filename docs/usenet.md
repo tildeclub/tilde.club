@@ -1,130 +1,87 @@
-# Usenet in 60 Seconds
+# Usenet and local newsgroups
 
-## Installation
+The current shell host runs INN 2.7.3. Its reader rules, peer list, and spool
+configuration were not supplied. The old Fedora 32 setup and manual history
+rebuild have been replaced here with a local-first deployment procedure.
 
-Create Linux machine (This is based on Fedora 32)
+## Install and inspect the packaged layout
 
-    $ sudo -i
-    root $ dnf update
+```bash
+dnf install inn slrn
+rpm -ql inn
+systemctl cat innd.service
+```
 
+Use the config, service account, spool, history, and log paths supplied by that
+package. Do not replace `pathnews` with `/usr/local/news` merely because an old
+source-install guide used it. Keep a copy of the packaged examples and consult
+the installed `inn.conf(5)` and `readers.conf(5)` manuals.
 
-    root $ dnf install innd
+In `inn.conf`, set your own `organization`, `pathhost`, `domain`, and reader
+`server` name. Retain the packaged storage/history layout until you have a
+reason to change it. Keep the first deployment reachable only from loopback or
+an explicit trusted network, using both the service's bind policy and the
+firewall.
 
-    root $ vim /etc/hostname # set your hostname to something like `news`
-    root $ vim /etc/hosts # change local.localdomain to the new hostname
+## Local reader policy
 
-    # should probably restart the machine to get the new hostname
+INN separates reader authentication from reader access. A small example
+`readers.conf` for trusted localhost shell clients is:
 
-    root $ sudo -u news bash
-    news $ vim /etc/inn.conf
+```text
+auth "shell-local" {
+    hosts: "127.0.0.1,::1"
+    default: "<shell-local>"
+}
+access "shell-local" {
+    users: "<shell-local>"
+    read: "local.*"
+    post: "local.*"
+}
+```
 
-The top of my `inn.conf` looks like:
-        
-        mta:                         "/usr/sbin/sendmail -oi -oem %s"
-        organization:                "tilde.club"
-        ovmethod:                    tradindexed
-        hismethod:                   hisv6
-        pathhost:                    news.tilde.club
-        pathnews:                    /usr/local/news
+This deliberately trusts connections originating on the machine and does not
+authenticate an individual shell user. Decide whether that is sufficient for
+your community. It is not an appropriate anonymous Internet posting policy.
+Review the whole file: another broad auth/access block can grant access you
+did not intend, and matching order matters.
 
-        #runasuser:
-        #runasgroup:
+Use the package's `inncheck` as the news service user, fix reported errors,
+then start `innd`. Locate the packaged admin binaries if they are not on PATH:
 
-        # General Settings
+```bash
+rpm -ql inn | rg '/(inncheck|ctlinnd|news.daily)$'
+systemctl enable --now innd
+```
 
-        domain:                      news.tilde.club
-        #innflags:
-        mailcmd:                     /usr/libexec/news/innmail
-        server:                      news.tilde.club
-        #syntaxchecks:               [ no-laxmid ]
+Create a disposable local group with the installed `ctlinnd newgroup` command,
+for example `local.test`, as the news service user. Read, post, and retrieve a
+test article with a local client. Check the configured spool and logs after a
+restart. Test that a client outside the permitted source range is denied.
 
+## Expiry and maintenance
 
-Then you need to configure `readers.conf` to say who can connect, how, and what
-kind of things they get when they log in.
+Inspect the packaged expiry timer and cron integration before adding another
+job. Configure `expire.ctl` for the groups and retention you intend to keep,
+then verify `news.daily` actually runs. Monitor spool blocks and inodes, history
+size, failures, and feed queues. A job in a document is not evidence that it is
+scheduled on the host.
 
-    news $ mv /etc/news/readers.conf /etc/news/readers.conf.old
-    news $ vim /etc/readers.conf
+Back up the config and recovery-critical spool/history state according to the
+storage method and upstream recovery procedure. Do not run an old `makehistory`
+recipe against a live spool without confirming the storage method, paths,
+backups, and downtime requirements. Never move guessed `.hash`, `.dir`, or
+`.index` files into place because they appeared in a guide for another INN version.
 
-A rudimentary `readers.conf` looks like:
+## Remote readers and peering
 
-    # Since tilde.club is very open and inviting, I don't mind having
-    # such a wild rule.
-    
-    auth tilde.club {
-            hosts: *
-            default: <PUBLIC>
-    }
+Keep these separate. TLS/authenticated reader access has a different purpose
+from server-to-server article feeds. Before adding a remote peer, agree on
+names, source addresses, offered groups, moderation/control policy, volume,
+spam handling, and feed authentication. Configure `incoming.conf` and
+`newsfeeds` for those peers specifically. Do not use a wildcard peer rule or
+open reader posting simply to make a connection test pass.
 
-    access default {
-            users: <PUBLIC>
-            newsgroups: "*,!admin.*,!control,!control.*,!mode,!junk"
-    }
-
-    access admin {
-            users: "artem,ftrain@tilde.club"
-            newsgroups: *
-            access: "RPA"
-            perlfilter: false
-    }
-
-And finally set up the cron job to expire messages. Make sure you add this as
-the `news` user cron:
-
-0 6 * * *               /usr/libexec/news/news.daily > dev/null
-
-## Running the server
-
-This can be accomplished via systemd. 
-
-Here is how to enable it to start automatically:
-
-    root $ systemctl enable innd
-
-The following runs the server:
-
-    root $ systemctl start innd
-
-And the following stops it:
-
-    root $ systemctl stop innd
-
-All errors are logged to `/var/log/news`. `/var/log/errlog` is a good resource for finding
-out why your news server isn't running. 
-
-
-
-## Troubleshooting the server
-
-If you know there are articles on the server and for some reason they do not show when you connect with a client, you can rebuild your history and index's.
-
-    root $ systemctl stop innd
-    
-    root $ sudo -u news bash
-        
-    news $ cd /var/lib/news/
-    
-    news $ time /usr/libexec/news/makehistory -b -O -f history.n
-    
-    news $ awk 'NF == 2 { print }' < history >> history.n
-    
-    news $ /usr/libexec/news/makedbz -s `wc -l < history` -f history.n
-    
-    news $ mv  history.n history
-    
-    news $ mv history.n.dir  history.dir
-    
-    news $ mv history.n.hash history.hash
-    
-    news $ mv history.n.index history.index
-    
-    news $ exit
-    
-    root $ systemctl innd start
-    
-    root $ sudo -u news /usr/libexec/news/ctlinnd renumber ''
-        
-    Above guide was copied/modified from: https://lists.isc.org/pipermail/inn-workers/2003-September/012007.html
-    
-    
-    
-    
+Use the current [INN documentation](https://www.eyrie.org/~eagle/software/inn/docs/),
+including [reader access](https://www.eyrie.org/~eagle/software/inn/docs/readers.conf.html)
+and [installation](https://www.eyrie.org/~eagle/software/inn/docs/install.html).

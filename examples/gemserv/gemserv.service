@@ -1,0 +1,20 @@
+[Unit]
+Description=Gemini publishing
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=gemini
+Group=gemini
+WorkingDirectory=/srv/gemini
+ExecStart=/usr/local/sbin/gemserv /etc/gemserv/config.toml
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target

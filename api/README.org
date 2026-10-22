@@ -1,7 +1,24 @@
-Gather up the code that people are writing and put it here
-- chat tools
-- user listing
-- user #
-- list of sites
-- river
-- 
+#+TITLE: Site utilities
+
+* Scope
+
+The files under this directory are retained utility implementations, not the
+current server configuration or an automated installation system. Start with
+[[file:../docs/how-to-set-up-a-tilde.md][the installation guide]] and [[file:../docs/community.md][community applications]].
+
+* Recently updated pages
+
+See [[file:recently-updated/README.md][the implementation notes]] before using these scripts.
+A separate public repo also exists at https://github.com/tildeclub/recently-updated.
+Inspect the chosen version; do not infer production deployment from a repo name.
+
+Run indexing as an unprivileged service identity with only intended public-read
+access, stage output outside the served tree, validate it, and publish atomically.
+Do not run a broad scan of homes as root from a web request.
+
+* Adding an endpoint
+
+Document its input, output schema, account visibility, schedule, data retention,
+error behavior, and owner. Escape HTML and serialize JSON with a real serializer.
+A local account name or filesystem filename is data, not trusted markup.
+Keep private account fields and credentials out of generated public output.

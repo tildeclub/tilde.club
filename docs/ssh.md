@@ -1,78 +1,174 @@
-[tilde.club](http://tilde.club) uses SSH public-key authentication.
+# SSH access and MFA
 
-If you want access to [tilde.club](http://tilde.club), you'll need to create a new SSH key pair and then send the **public** key to the admins; they will then associate it with your account and let you know when things are ready for you to log in.
+## Member keys
 
-## Mac
+Use an SSH client already supplied with Linux, macOS, or Windows OpenSSH. On
+Windows, PowerShell can run the same `ssh` and `ssh-keygen` commands. PuTTY is
+also fine if the user prefers it; submit the OpenSSH-format public-key line,
+not a `.ppk` private key.
 
-### Generating your key pair
+On your own computer, generate a separate key if you do not already have one
+you want to use. Choose a new filename rather than overwriting an existing key:
 
-1. Open **Terminal** (in `/Applications/Utilities/`).
-1. In the **Terminal** window, paste the following:
-<pre>
-mkdir -m 700 -p ~/.ssh                          # Create your .ssh directory
-ssh-keygen -t rsa -b 2048 -f ~/.ssh/tilde.club  # Create your keys
-</pre>
-1. The `ssh-keygen` program will generate two new keys (private and public), and prompt you for a password. Please set a good password (at least 9 characters, and not just letters or numbers), and make a note of it somewhere safe.
-1. Now, in **Terminal**, type: `open ~/.ssh` to open a Finder window showing your `.ssh` directory.
-1. Take the `tilde.club.pub` file and attach it to an email to ford@ (our friendly host). **Do not attach the file `tilde.club`** -- that is your *private* key, which you should never ever **ever** share with anyone.
+```bash
+ssh-keygen -t ed25519 -a 64 -f ~/.ssh/tilde_ed25519
+```
 
-### Using your key pair
+Use a passphrase. Send only `tilde_ed25519.pub` to the operator or signup form.
+The file without `.pub` is private and stays on your computer. A hardware-backed
+key can also be used when both the client and host support it.
 
-1. Open **Terminal**.
-1. Type `ssh -i ~/.ssh/tilde.club username@tilde.club` (substituting your own username).
+Connect with:
 
-Note that it's possible to save an SSH configuration so you don't have to type this whole long thing every time; [here's a good primer](http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/) on how to do that. If you save your private key passphrase in the OS X Keychain, you shouldn't need to enter it to login.
+```bash
+ssh -i ~/.ssh/tilde_ed25519 member@tilde.example.net
+```
 
-## Linux
+A local `~/.ssh/config` entry saves typing:
 
-### Generating your key pair
+```sshconfig
+Host mytilde
+    HostName tilde.example.net
+    User member
+    IdentityFile ~/.ssh/tilde_ed25519
+    IdentitiesOnly yes
+    ForwardAgent no
+```
 
-If you're on Linux you can use the same commands as on the Mac to generate and use a `tilde.club` key pair, but attaching `tilde.club.pub` to email is left as an exercise for the reader.
+Verify a new host's fingerprint through a separate trusted channel. If it
+changes later, ask why before replacing the saved host key. Agent forwarding
+is normally unnecessary for using the host; enable it only for a specific
+reason you understand.
 
-### Using your key pair
+## What the collected host does
 
-At a command prompt, type `ssh -i ~/.ssh/tilde.club username@tilde.club` (substituting your own username).
+The main daemon reads `/etc/ssh/sshd_config`. It has public-key support,
+`PasswordAuthentication no`, keyboard-interactive authentication enabled, and
+`UsePAM yes`. `AuthenticationMethods` is not set to require a combination;
+the observed effective value is `any`.
 
-Note that it's possible to save an SSH configuration so that you don't have to type this whole long thing every time; [here's a good primer](http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/) on how to do that.
+Its SSH PAM authentication stack requires `pam_unix` and
+`pam_google_authenticator`, except for a special help account. That means the
+PAM route asks for the Unix password and a TOTP code. It does **not** mean
+public-key login must also complete that route: the collected SSH configuration
+accepts a valid public key on its own. Existing account-specific exceptions and
+a separate restricted help command must be reviewed locally rather than copied
+into a new installation.
 
-## Windows
+`setup-2fa` is a small wrapper around `/usr/bin/google-authenticator`.
+`check_google_authenticator.sh` is not referenced by the collected SSH PAM file;
+its printed output is not an enforced authentication policy.
 
-### Generating your key pair
+The main config collected from this host does not contain an `Include` for
+`sshd_config.d`. The presence of files in that directory does not make them
+active. Check the actual service command and configuration before assuming a
+drop-in changes anything.
 
-The easiest way to generate a key pair on Windows is to use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/), a freely-available SSH client which comes with its own key generator.
+## Key-only baseline for a new host
 
-1. Download **PuTTY** [here](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). (Specifically, get the Windows Installer version; if you download the binaries individually, make sure you get the **PuTTYgen** binary, which is what generates key pairs.)
-1. Run **PuTTYgen**.
-1. From the main window, click the **Generate** button; you'll be asked to move the mouse around to generate randomness, which you should do until **PuTTYgen** tells you that it's generating the key.
-1. Once the key pair is generated, click the **Save public key** button, choose a directory to save it into, and in the "File name" field, type `tilde.club.pub`. Save the key.
-1. Halfway down the main window, type a good password into the "Key passphrase" field (at least 9 characters, and not just letters or numbers), and repeat it in the "Confirm passphrase" field.
-1. Click the **Save private key** button, choose the same directory as above, type `tilde.club` into the "File name" field, and save the private key.
-1. Finally, email the `tilde.club.pub` file to ford@ (our friendly host). **Do not attach the file `tilde.club`** -- that is your *private* key, which you should never ever **ever** share with anyone.
+Use [the example drop-in](../examples/ssh/00-tilde.conf) only after admin key
+login and sudo have been tested. Put it in a directory that the actual main
+config includes at global scope. Fedora's default layout normally provides
+`/etc/ssh/sshd_config.d/*.conf`; existing customized configs may not.
 
-### Using your key pair
+OpenSSH generally uses the first value it obtains for a setting. A file placed
+later in the include order will not necessarily override an earlier value.
+Keep `Match` sections at the end and finish a conditional section with
+`Match all` before adding unrelated global settings.
 
-1. Run **PuTTY**.
-1. In the first window that comes up, you should be in the main "Session" category (in the left-hand column). On the right, in the "Host Name" field, type `tilde.club`.
-1. In the left-hand column, find the **SSH** entry underneath the **Connection** section and then click on the small + next to it to open it up; then find and click the **Auth** entry just below it.
-1. On the right the last field should be "Private key file for authentication"; click the **Browse** button and find the `tilde.club` file you saved above. Select it and click the **Open** button.
-1. Finally, click the **Open** button at the bottom of the main PuTTY window to open your connection. You'll be asked for your username ("login as:"); type it and hit Enter. You will then be asked for your key passphrase; type it and hit enter, and you're in.
+Before applying anything, keep a backup of the main file, its includes, the
+SSH PAM file, and any unit overrides. Keep a working connection and the provider
+console available. Validate the **effective** settings as well as syntax:
 
-Note that you can save these settings from that first page of the main PuTTY window, so you don't have to do this every time. You can also use [Pageant](http://the.earth.li/~sgtatham/putty/0.58/htmldoc/Chapter9.html) (another part of the **PuTTY** kit) to store your keys so you don't need to enter them each time you login.
+```bash
+sshd -t
+sshd -T -C user=member,host=client.example.net,addr=192.0.2.20
+systemctl reload sshd
+```
 
-## Android
+Run connection tests from a second terminal on your own computer. Test the
+admin and member separately. Match rules based on source address or local port
+also need representative `addr`, `laddr`, and `lport` values in the test context.
+A successful syntax check alone does not establish that the intended method
+will be accepted.
 
-### Generating your key pair
+## Require MFA after enrollment
 
-1. There are several SSH terminals in the Play store. [JuiceSSH](http://juicessh.com) is one of them, try it out, see if you like it.
-2. Follow this [tutorial](http://sonelli.freshdesk.com/support/solutions/articles/187068-how-do-i-generate-an-ssh-key-within) for generating a key pair with JuiceSSH.
+For a new host, keep the key-only baseline working while enrolling people.
+The following is an example policy, not a report of the production host's
+current enforcement:
 
-### Using your key pair
+1. Install `google-authenticator` and ensure time synchronization is healthy.
+2. Create a group named `mfa-ready`.
+3. Have the test member run `google-authenticator` interactively in their own
+   account. Use time-based tokens, save the recovery codes somewhere private
+   off the host, and complete a code check. Keep `.google_authenticator` private.
+4. Keep the Fedora SSH PAM account/session stack. Add
+   `auth required pam_google_authenticator.so` to `/etc/pam.d/sshd` after its
+   normal authentication rules. Do not use `nullok` for an account that must
+   provide a second factor. Do not edit authselect-generated shared files to
+   make this SSH-only change.
+5. Add the following conditional block at the end of the effective SSH config,
+   after the baseline global settings:
 
-1. For JuiceSSH, follow this [tutorial](http://sonelli.freshdesk.com/support/solutions/articles/178806-how-to-create-define-a-new-ssh) on defining new credentials.
-2. Let us know how it goes!
+```sshconfig
+Match Group mfa-ready
+    KbdInteractiveAuthentication yes
+    AuthenticationMethods publickey,keyboard-interactive:pam
+Match all
+```
 
-## Why go through all this?
+With Fedora's password authentication PAM substack retained, this asks for a
+key, the Unix password, and the authenticator code. If you want a key plus TOTP
+without the Unix password, design and test that SSH-specific PAM stack instead
+of removing password checks from the shared system authentication configuration.
 
-One of the weakest links in online account security is your password. If someone were to take over the tilde server (specifically the SSH server, `sshd`), they would be able to capture the passwords of everyone who uses a password to log in. (This isn't theoretical -- [it has actually happened](http://www.apache.org/info/20010519-hack.html).) If users use their SSH keys to log in instead, hackers can't do this anymore; a user's private key never leaves their own computer and can't be captured on the server.
+Validate the config, then add only the enrolled test account to the group:
 
-Additionally, if you use an SSH agent, you can login without entering a password every time. On OS X the Apple Keychain provides this functionality. On Linux it's `ssh-agent` (optionally with assistance from [keychain](http://www.funtoo.org/Keychain)). On Windows `Pageant` provides this capability for [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
+```bash
+groupadd -f mfa-ready
+usermod --append --groups mfa-ready member
+sshd -t
+sshd -T -C user=member,host=client.example.net,addr=192.0.2.20
+systemctl reload sshd
+```
+
+From the client, test correct and incorrect codes and confirm that key-only
+batch authentication fails for the enrolled account:
+
+```bash
+ssh -o BatchMode=yes -o PreferredAuthentications=publickey \
+    -i ~/.ssh/tilde_ed25519 member@tilde.example.net
+```
+
+That last command is a negative test and should fail under the enforced policy.
+Also verify normal interactive login, SFTP if offered, recovery codes, and admin
+recovery. Scripts using SSH need a separately documented policy; silently
+exempting all automation defeats a blanket MFA claim.
+
+Only enroll more members after the full test passes. A user-editable startup
+file or `.new_user` marker is onboarding state, not an access-control boundary.
+
+## Legacy SSH
+
+The existing host has a second daemon on TCP 2222. Its service reads
+`/etc/ssh/sshd_config_legacy`, disables root and password login, restricts its
+allowed user, and deliberately enables old RSA/SHA-1 and group1 algorithms.
+This is a compatibility exception, not a general access method.
+
+A new tilde does not need this service. If you have a specific legacy client
+requirement, isolate it in a separate daemon and source/identity policy, verify
+its effective settings with `sshd -T -f PATH`, and record who needs it and when
+it can be retired. Do not weaken the normal daemon or the host-wide crypto
+policy for every member.
+
+## Recovery
+
+Verify the person's identity before replacing a key or resetting MFA. Remove
+lost factors, invalidate unused recovery codes when re-enrolling, and check
+whether other services share the same account password. Test that the revoked
+key or factor no longer works. Do not ask someone to send a private SSH key or
+their TOTP secret in an ordinary support message.
+
+References: [OpenSSH server configuration](https://man.openbsd.org/sshd_config)
+and [Google Authenticator PAM](https://github.com/google/google-authenticator-libpam).

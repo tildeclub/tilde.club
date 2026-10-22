@@ -1,49 +1,39 @@
-"based on revison https://github.com/tildeclub/tilde.club/commit/6a35a61621150a9547fb63201524c95ab513177b " 
-# FAQ EN ESPAÑOL
+# Preguntas frecuentes
 
-      ________________________________________
-     / BIENVENIDO A TILDE.CLUB Un lugar para  \
-     \ las páginas web                        /
-      ----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
+## ¿Qué es tilde.club?
 
-## ¿Quieres unirte? ¡Estaremos encantados de conocerte!
+Es una máquina Unix compartida. Cada miembro tiene una cuenta de shell y espacio
+para publicar páginas, aprender y trabajar en sus propios proyectos.
 
-Tenemos algún que otro problema de capacidad y organización que solucionar, pero estamos trabajando activamente en ello. ¡[Sigue la conversación aquí](https://github.com/tildeclub/tilde.club/issues/18) y únete a la lista de espera [aquí](http://goo.gl/forms/gRMRT1YBU4)!
+## ¿Cómo solicito una cuenta?
 
-[Varios clubs alternativos han surgido](http://tilde.club/%7Epfhawkins/othertildes.html) y carecen de lista de espera. Únete a alguno de ellos mientras trabajamos en la forma de conectarnos en una feliz e hipervinculada red de intereses comunes.
+Consulta el formulario y las instrucciones actuales en [tilde.club](https://tilde.club).
+La aceptación y el tiempo de respuesta dependen de los operadores. Los enlaces
+antiguos a listas de espera ya no son las instrucciones de esta página.
 
-## ¿Cómo surgió esta cosa accidentalmente increíble?
+Necesitas una clave pública SSH. Conserva la clave privada en tu propio equipo;
+no la envíes al formulario ni por correo. La [guía SSH](docs/ssh.md) explica cómo
+generar una clave y conectarte desde Linux, macOS o Windows.
 
-[Paul ha escrito una explicacion en Medium](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf) y puedes leer su ideas [en su blog en tilde](http://tilde.club/~ford/).
+## ¿Qué hago después de entrar?
 
-## Ya estoy en Tilde, ¿y ahora qué?
+Lee las instrucciones de bienvenida, configura la autenticación indicada por el
+operador y consulta la [wiki](https://tilde.club/wiki/). Tus páginas web se editan
+en `~/public_html`. Gopher y Gemini usan directorios distintos si están habilitados.
 
-Tilde cuenta con un gran espíritu de communidad y estamos intentando por todos los medios que se mantenga así. Estamos redactando unas normas de etiqueta para los recién llegados. Mientras tanto…
+Respeta a los demás usuarios, sus archivos y los recursos compartidos. Si algo
+no funciona, pregunta; no necesitas conocer todos los comandos antes de empezar.
 
-- ¡NO PIRATEES EL GIBSON!
-- Nada de dramas. Se respetuoso. Diviértete. Nos estamos esforzando y estamos todos juntos en esto.
+## ¿Puedo montar una máquina parecida?
 
-## Lo he pillado, no seas un capullo. Pero cómo, ehhh, ¿hago cosas?
+Sí. Empieza por la [guía de instalación](docs/how-to-set-up-a-tilde.md) y el
+[estado documentado del servidor](docs/current-system.md). Los ejemplos usan
+dominios y cuentas de prueba. Debes adaptar la configuración, mantener los
+servicios y comprobar las copias de seguridad y su restauración.
 
-[~anthonydpaul te tiene cubierto con el tutorial oficial no oficial introductorio](http://tilde.club/~anthonydpaul/primer.html).
+## ¿Dónde están las instrucciones completas?
 
-## Otros enlaces
-
-- [Github](https://github.com/tildeclub/tilde.club)
-- [Webring](http://tilde.club/~harper/link.html?action=join) 
-- [Skillswap](http://goo.gl/forms/LT2bDgtmwH)
-
-Estamos deseando conocerte.
-
- 
- 
-         __         .' '.
-       _/__)        .   .       .
-      (8|)_}}- .      .        .
-       `\__)    '. . ' ' .  . '
-
+- [Sitio y solicitudes de cuenta](https://tilde.club)
+- [Wiki para usuarios](https://tilde.club/wiki/)
+- [Documentación de administración](README.md)
+- [Código y correcciones](https://github.com/tildeclub/tilde.club)

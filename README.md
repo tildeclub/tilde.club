@@ -1,47 +1,64 @@
-tilde.club
-==========
+# tilde.club
 
-This is the set of code and utilities for running and managing the
-tilde.club server.
+This repo documents how to build and run a shared Unix machine like
+[tilde.club](https://tilde.club). It also keeps the older site utilities at their
+existing paths.
 
-# What is tilde.club?
-- [https://tilde.club](https://tilde.club) is one unmodified unix server on the Internet
-  - Several thousand people have accounts
-  - It was launched at the end of September 2014
-- Tilde.Club is *also* an emerging, mutually supportive community of <del>dozens</del> <del>hundreds</del> thousands of people launching similar servers.
-  - These people enjoy working in the tool-rich, very social Unix programming environment. 
-  - Many of these people want to help new users use these open, free tools to empower themselves. 
-    - Even new users who are scared of command-lines. 
-    - Especially new users who want to learn but don't like being laughed at. 
-    - _We won't laugh at you because we know how hard it is to learn about technology._
-    - _If this is confusing we will try to help._
-- [Here is the story of how tilde.club started](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf). Basically, one person had a few too many drinks and launched a cheap computer in the cloud. Github user @ftrain is the initiator and recently Github user @mbuchholz81 has taken over tilde.club from @ftrain.
-- [Here is the FAQ](https://tilde.club/wiki/faq.html) which is being developed here at this GitHub repository.
-- No particular entity controls tilde.club. It's emerging as sort of an open, basically free mini-Internet for people who need some refuge from the regular Internet. It was founded with the rule, "no drama," a rule directly inspired by the  Mary J. Blige song  "No More Drama." So far there's only been a little drama. It's only been three weeks, though. If we're honest with ourselves there is going to be drama.
+Members get a shell account, space for their own pages, and tools for writing,
+programming, chatting, and making whatever interests them. You do not need to
+know all of Unix before joining. Helping people learn is part of running the
+place.
 
-It's all moving very fast.
+## Build your own
 
-# Getting started: run a tilde and help users build on it
+Start with [Build a tilde-style machine](docs/how-to-set-up-a-tilde.md).
+It follows a Fedora/nginx setup from a new host through account creation,
+publishing, limits, backups, and launch checks.
 
-If your goal is to launch your own tilde-style host (or improve an existing one), start here:
+The [current system record](docs/current-system.md) describes what was confirmed
+on tilde.club on October 22, 2026. The [example configs](examples/README.md) are
+separate starting points for a new host. Applying this repo patch does not
+install them or change a running server.
 
-- [Build your own tilde-style server](docs/how-to-set-up-a-tilde.md)
-- [Shell server setup notes](docs/shellserver.md)
-- [SSH key onboarding guide](docs/ssh.md)
-- [Current `/etc/skel` permissions reference](docs/etc-skel-permissions.md)
-- [User and session accounting quick reference](docs/accounting.md)
+| Topic | Guide |
+| --- | --- |
+| Base installation | [Build a tilde-style machine](docs/how-to-set-up-a-tilde.md) |
+| Accounts and onboarding | [Account creation and first login](docs/accounts.md) |
+| Login and recovery | [SSH keys and MFA](docs/ssh.md) |
+| Home defaults | [Skeleton and permissions](docs/etc-skel-permissions.md) |
+| Publishing | [nginx, PHP-FPM, and CGI](docs/web.md) |
+| Mail | [Postfix, Dovecot 2.4, submission, and filtering](docs/mail.md) |
+| Other publishing | [Gopher, Gemini, and finger](docs/publishing.md) |
+| Chat | [IRC operations](docs/ircserver.md) and [connection details](docs/ircserver-connections.md) |
+| News | [INN and local newsgroups](docs/usenet.md) |
+| Daily operation | [Quotas, resource limits, firewall, and maintenance](docs/shellserver.md) |
+| Recovery | [Borg/borgmatic backups and restore](docs/backups.md) |
+| Usage records | [Login and process accounting](docs/accounting.md) |
+| Website and apps | [Sources, signups, wiki, and community tools](docs/community.md) |
 
-These documents are focused on practical operations, onboarding, and adding community functionality in safe increments.
+The older [server.org](docs/server.org) path remains as a pointer. The
+[API notes](api/README.org), [recent-page utility notes](api/recently-updated/README.md),
+and [connection-list notes](pages/list-html-connections/README.md) explain the
+retained programs and their limitations. They are not an unattended installer.
 
-# Help Wanted
-Tilde.club is moving very quickly and is 100% volunteer led.
+## About tilde.club
 
-## 1. optimal: pull requests and bug reports
-- There is a lot of great work going on around config, FAQ, basic docs.
-- Jump in if you want. Literally everyone here said "I am ready to help, what can I do."
-- We need non-coders  (writers, editors, communicators, artists, project managers) as much as we need tech folks.
-- Most of the coding work is done for us by the Unix operating system. We're celebrating that.
-- A lot of the basic docs are in the [wiki](https://github.com/tildeclub/tilde.club/wiki) which you (yes, you) can edit.
+Tilde.club started in September 2014. Paul Ford wrote about
+[how it began](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf).
+The [website](https://tilde.club) and [user wiki](https://tilde.club/wiki/) cover
+joining and using the server. This repo covers operating one.
 
-## 2. suboptimal: open ended feature requests and broad discussion
-- We love philosophy, just not in our issue tracker!
+[Preguntas frecuentes en español](faq-esp.md).
+
+## Contributing
+
+Corrections, tested configs, and missing instructions are welcome. Include the
+OS and software versions you used, what you changed, and how you checked the
+result. Documentation fixes are useful contributions too.
+
+Use example domains and accounts. Leave passwords, private keys, MFA secrets,
+and members' personal information out of commits and issue attachments. Keep
+production-specific settings distinct from advice for a new installation.
+
+Existing utilities are licensed under the terms retained in [LICENSE](LICENSE)
+and their source notices. This update preserves those files and attributions.
